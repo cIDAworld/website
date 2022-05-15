@@ -60,11 +60,7 @@ const NavBar = props => {
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <div
-        className={`navbar-menu has-background-white ${
-          !mobileMenu ? "" : "is-active"
-        }`}
-      >
+      <div className={`navbar-menu ${!mobileMenu ? "" : "is-active"}`}>
         <div className="navbar-end">
           {navItems.map(item => {
             return (

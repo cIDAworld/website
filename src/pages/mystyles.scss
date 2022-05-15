@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+// Colour schemes
+$link: #5d246b;
+
+
+// Spacing 
+$spacing-values: ("nav-bar": 100px);
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.has-no-bg-color {
+    background-color: transparent !important;
+}
+
+.hero {
+    position: relative;
+
+    .background {
+        position: absolute;
+        object-fit: cover;
+        overflow: hidden;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+    // Make background darker to make light font more visible
+    .background:after {
+        content: '\A';
+        position: absolute;
+        width: 100%; height:100%;
+        top:0; left:0;
+        background:#000;
+        opacity: 0.5;
+    }
+    .logo {
+        max-width: 300px;
+    }
+    .text-overlay {
+        z-index: 1;
+    }
+}
+
+.navbar {
+    transition: 1s;
+    .navbar-item:hover {
+        border: 2px solid $link;
+    }
+} 
+
+.footer {
+    .logo {
+        max-width: 200px;
+    }
+}
+
+.section {
+    p {
+        padding-bottom: 1rem;
+    }
+}
+
+
+
+@import "~bulma/bulma.sass";
+

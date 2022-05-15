@@ -4,10 +4,11 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
-require('dotenv').config()
+require("dotenv").config()
 
 module.exports = {
   /* Your site config here */
+  pathPrefix: "",
   plugins: [
     "gatsby-plugin-react-helmet",
     {
@@ -61,6 +62,7 @@ module.exports = {
         },
       },
     },
-    "gatsby-plugin-catch-links"
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-sass",
   ],
 }

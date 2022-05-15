@@ -2,25 +2,50 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: #666;
 }
 
+.spread-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+}
+
+button.large-button {
+  width: 200px;
+  height: 100px;
+  margin: 25px;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  background-color: #666;
+  color: #fff;
+}
+
+button.large-button:hover {
+  cursor: pointer;
+}
+
 #body-container {
-  max-width: 1440px;
+  /* max-width: 1440px; */
   width: 100%;
   margin: 0 auto;
 }
 
 #header header {
   height: 80px;
-  background-color: #fff;
-  position: fixed;
+  background-color: #ff5252;
+  position: sticky;
   width: 100%;
-  max-width: 1440px;
+  /* max-width: 1440px; */
 }
 
 #header.sit header {
@@ -28,18 +53,20 @@ body {
 }
 
 #header header #logo {
+  display: inline-block;
   height: 80px;
-  width: 80px;
-  float: left;
-  position: relative;
+  width: 200px;
+  /* float: left; */
+  /* position: relative; */
   z-index: 99;
-  background-image: url("/images/logo.gif");
+  background-image: url("../../static/images/cida_logo.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 #header.sit header #logo {
-  background-image: url("/images/logo_plain.jpg");
+  display: inline-block;
+  background-image: url("../../static/images/cida_logo.png");
 }
 
 #header header #logo-line {
@@ -57,10 +84,10 @@ body {
 }
 
 #header header #logo-title {
-  float: left;
+  /* float: left; */
   height: 80px;
   width: 450px;
-  background-image: url("/images/logo_title.gif");
+  background-image: url("../../static/images/cida_text.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -76,7 +103,7 @@ body {
 }
 
 #header header i:hover {
-  color: #231f20;
+  /* color: #231f20; */
 }
 #header header #header-social {
   margin: 20px 20px 0 0;
@@ -98,16 +125,18 @@ body {
 }
 
 #header nav {
-  position: fixed;
-  margin: 80px 0 0 0;
-  font-size: 15px;
+  /* position: fixed; */
+  /* margin: 80px 0 0 0; */
+
+  font-size: 20px;
+  font-style: bold;
+  /* text-align: right; */
   width: 100%;
-  max-width: 1440px;
 }
 
 #header nav:hover {
-  background-color: #fff;
-  border-top: 1px solid black;
+  /* background-color: #fff; */
+  /* border-top: 1px solid black; */
 }
 
 #header nav .navbar-outer-item,
@@ -122,7 +151,7 @@ body {
 
 #header.sit nav .navbar-outer-item,
 #header.sit nav .navbar-link {
-  color: #000;
+  color: #fff;
 }
 
 #header.sit nav:hover {
@@ -135,7 +164,7 @@ body {
 }
 
 #header nav .navbar-outer-item:hover {
-  border-bottom: 3px solid #d5df22;
+  border-bottom: 3px solid #ff5252;
 }
 
 #header nav .navbar-inner-item {
@@ -146,7 +175,7 @@ body {
 }
 
 #header nav .navbar-inner-item:hover {
-  color: #000;
+  /* color: #000; */
   background: #fff;
 }
 
@@ -195,7 +224,7 @@ body {
   line-height: 80px;
   text-transform: uppercase;
   text-align: center;
-  font-family: "StencilCreek-50";
+  font-family: "akzidenz-grotesk";
 }
 #header-slideshow ul.slick-dots {
   transform: translateY(-6em);
@@ -214,7 +243,7 @@ body {
 }
 
 #header-top h1 {
-  font-family: "StencilCreek-50";
+  font-family: "akzidenz-grotesk";
   font-size: 70px;
   line-height: 70px;
   bottom: 0;
@@ -266,6 +295,44 @@ body {
 
 #header.sit h1 {
   display: none;
+}
+
+
+/* Title */
+
+#title {
+  position: relative;
+  width: 100vw;
+  min-height: calc(100vh - 80px);
+  text-align: center;
+  overflow: hidden;
+  /* background-image: url("../../static/images/uni_of_essex.jpeg"); */
+}
+
+.text-over-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.4);
+  
+}
+
+.text-over-image a {
+  color: inherit;
+}
+
+.text-over-image h1 {
+  padding: 50px;
+  font-size: 70px;
+  font-weight: bold;
 }
 
 .content-container .text-content p:first-child,
@@ -327,7 +394,7 @@ body {
 }
 
 .content-container .text-content .metadata a {
-  color: #d5df22;
+  color: #ff5252;
 }
 
 #home-apply-banner {
@@ -359,7 +426,7 @@ body {
   text-transform: uppercase;
   color: #fff;
   width: 130px;
-  font-family: "StencilCreek-50";
+  font-family: "akzidenz-grotesk";
   font-size: 18px;
 }
 #home-apply-banner label img {
@@ -418,6 +485,12 @@ body {
   background-color: white;
 }
 
+h1.section-header {
+  font-size: 3rem;
+  /* font-variant: small-caps; */
+  font-weight: bolder;
+}
+
 #page-content #section-menu {
   margin: 0 30px;
 }
@@ -441,12 +514,12 @@ table td * {
 }
 
 a {
-  color: #d5df22;
+  color: #ff5252;
 }
 
 #home-content-start {
   height: 30px;
-  background-color: #d5df22;
+  background-color: #ff5252;
   width: 100%;
 }
 
@@ -485,7 +558,7 @@ a {
 #container .home-projects-more-text:hover div,
 #container .home-projects-more-text.on-mob div,
 #container .home-projects-more.block-open .home-projects-more-text div {
-  background-image: url(/images/arrow_grey_south_east.png);
+  background-image: url("../../static/images/arrow_grey_south_east.png");
   background-position: bottom 20px right 20px;
   background-repeat: no-repeat;
   background-size: 22px;
@@ -495,7 +568,7 @@ a {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
-  font-family: "StencilCreek-50";
+  font-family: "akzidenz-grotesk";
   font-weight: 100;
   font-style: normal;
   font-size: 50px;
@@ -538,7 +611,7 @@ a {
 
 #container .home-programmes-apply .home-programmes-apply-text span {
   text-transform: uppercase;
-  font-family: "StencilCreek-50";
+  font-family: "akzidenz-grotesk";
   font-weight: 100;
   font-style: normal;
   font-size: 70px;
@@ -550,7 +623,7 @@ a {
 #container #home-news h2,
 #container #home-partners h2 {
   margin: 60px 0 25px 0;
-  font-family: "StencilCreek-50";
+  font-family: "akzidenz-grotesk";
   font-weight: 100;
   font-style: normal;
   font-size: 70px;
@@ -599,14 +672,14 @@ a {
 
 .home-programmes-info-block-frame:hover,
 #home-programmes-info-blocks a .home-programmes-info-block-frame.block-open {
-  background-image: url(/images/arrow_grey_south_east.png);
+  background-image: url("../../static/images/arrow_grey_south_east.png");
   background-position: bottom 20px right 20px;
   background-repeat: no-repeat;
   background-size: 22px;
 }
 
 .home-programmes-info-block-frame .home-programmes-info-block h1 {
-  font-family: "StencilCreek-50";
+  font-family: "akzidenz-grotesk";
   font-size: 50px;
   font-style: normal;
   font-weight: 100;
@@ -615,6 +688,8 @@ a {
   text-transform: uppercase;
   margin: 0 20px 0 20px;
 }
+
+
 
 .home-programmes-info-block-frame:hover .home-programmes-info-block h1,
 #home-programmes-info-blocks
@@ -647,7 +722,7 @@ a {
 
 #container #home-news-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(/images/news_header.jpg);
+    url("../../static/images/news_header.jpg");
   background-size: cover;
   display: inline-block;
   width: 100%;
@@ -681,7 +756,7 @@ a {
 #container #home-news #home-news-articles article p.title {
   font-size: 12px;
   line-height: 12px;
-  color: #d5df22;
+  color: #ff5252;
 }
 #container #home-news #home-news-articles article p.title span {
   color: #fff;
@@ -696,7 +771,7 @@ a {
   color: #fff;
 }
 #container #home-news #home-news-articles article p a {
-  color: #d5df22;
+  color: #ff5252;
   text-decoration: underline;
 }
 #container #home-news #home-news-articles article hr {
@@ -712,7 +787,7 @@ a {
   display: block;
   border: none;
   padding: 15px 80px;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
@@ -721,8 +796,8 @@ a {
 #container #home-news button:hover {
   padding: 15px 145px 15px 15px;
   text-align: left;
-  background: #fff url(/images/arrow_pages_black_south_east.png) no-repeat right
-    15px bottom 15px;
+  /* background: #fff url("../../static/images/arrow_pages_black_south_east.png") no-repeat right
+    15px bottom 15px; */
   background-size: 22px;
   background-repeat: no-repeat;
   margin: 60px auto 30px;
@@ -765,7 +840,7 @@ a {
   background-color: #646466;
   color: #fff;
   padding: 15px 70px;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
@@ -784,8 +859,8 @@ a {
 #container #home-partners button:hover {
   padding: 15px 145px 15px 15px;
   text-align: left;
-  background: #646466 url(/images/arrow_pages_white_south_east.png) no-repeat
-    right 15px bottom 15px;
+  /* background: #646466 url("../../static/images/arrow_pages_white_south_east.png") no-repeat
+    right 15px bottom 15px; */
   background-repeat: no-repeat;
   background-size: auto;
   background-size: 22px;
@@ -956,7 +1031,7 @@ a {
 
 #news-home nav #section-menu ul li:hover,
 #news-home nav #section-menu ul li.active {
-  background-color: #d5df22 !important;
+  background-color: #ff5252 !important;
 }
 
 #news-home #news-home-articles {
@@ -1060,7 +1135,7 @@ a {
   text-align: center;
   background-color: #d2d3d5;
   color: #fff;
-  font-family: "StencilCreek-50";
+  font-family: "akzidenz-grotesk";
   font-weight: 100;
   font-style: normal;
   font-size: 40px;
@@ -1078,21 +1153,21 @@ a {
   #student-home
   #student-categories
   .student-filter-option-block.active:hover {
-  background-color: #ecff40;
+  background-color: #ff5252;
   cursor: pointer;
 }
 #page-content
   #student-home
   #student-categories
   .student-filter-option-block.active {
-  background-color: #d5df22;
+  background-color: #ff5252;
 }
 
 #page-content
   #student-home
   #student-categories
   .student-filter-option-block:hover {
-  background-color: #ecff40;
+  background-color: #ff5252;
   cursor: pointer;
   color: #000;
 }
@@ -1124,7 +1199,7 @@ a {
   text-align: center;
   background-color: #d2d3d5;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
   font-weight: 100;
   font-style: normal;
   font-size: 14px;
@@ -1134,7 +1209,7 @@ a {
   #student-home
   #student-keywords
   .student-filter-option-block.active:hover {
-  background-color: #ecff40;
+  background-color: #ff5252;
   cursor: pointer;
 }
 
@@ -1142,14 +1217,14 @@ a {
   #student-home
   #student-keywords
   .student-filter-option-block.active {
-  background-color: #d5df22;
+  background-color: #ff5252;
 }
 
 #page-content
   #student-home
   #student-keywords
   .student-filter-option-block:hover {
-  background-color: #ecff40;
+  background-color: #ff5252;
   cursor: pointer;
   color: #000;
 }
@@ -1173,7 +1248,7 @@ a {
 #student-projects .title {
   font-size: 40px;
   margin: 0 0 0 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
 }
@@ -1184,14 +1259,14 @@ a {
 #student-info .info-box .name {
   font-size: 32px;
   margin: 10px 0 20px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
   font-weight: 500;
   line-height: 20px;
 }
 #student-info .info-box .alumni {
   font-size: 15px;
   margin: 10px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
   font-weight: 400;
   color: #666;
   font-style: italic;
@@ -1200,7 +1275,7 @@ a {
 #student-info .info-box .course {
   font-size: 15px;
   margin: 10px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
   font-weight: 400;
   color: #666;
   font-style: italic;
@@ -1209,7 +1284,7 @@ a {
 #student-info .info-box .year {
   font-size: 15px;
   margin: 10px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
   font-weight: 400;
   color: #666;
   font-style: italic;
@@ -1239,14 +1314,14 @@ a {
 
 #page-content #student-project #student-project-info h1 {
   font-size: 25px;
-  font-family: "Roboto", sans-serif;
+  font-family: "akzidenz-grotesk", sans-serif;
   font-weight: 500;
   line-height: 40px;
   margin: 30px 20px 20px 0;
 }
 
 #page-content #student-project #student-project-info h1 span {
-  color: #d5df22;
+  color: #ff5252;
 }
 
 #page-content #student-project #student-project-info p.article-info {
@@ -1292,14 +1367,14 @@ a {
 
 #page-content #student-project #student-project-info ul.list li {
   float: left;
-  background-color: #d5df22;
+  background-color: #ff5252;
   margin: 0 5px 5px 0;
   padding: 5px;
 }
 
 #page-content #student-project #student-project-info ul.list li:hover {
   background-color: #fff;
-  color: #d5df22;
+  color: #ff5252;
 }
 
 #page-content #student-project #student-project-info a {
@@ -1809,7 +1884,7 @@ footer .footer-block {
   #header header #logo-title {
     height: 60px;
     width: 167px;
-    background-image: url("/images/logo_title_mini.gif");
+    /* background-image: url("../../static/images/logo_title_mini.gif"); */
   }
 
   #header header #header-social {
@@ -1920,7 +1995,7 @@ footer .footer-block {
     font-size: 18px;
     line-height: 18px;
     text-align: center;
-    font-family: "StencilCreek-50";
+    font-family: "akzidenz-grotesk";
   }
   #home-apply-banner label img {
     display: none;

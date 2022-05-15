@@ -1,52 +1,62 @@
 import React from "react"
-import { graphql, Link, useStaticQuery} from "gatsby"
-
-import ContentPage from "../components/content_page"
-import * as AboutStyle from "./about.module.css"
+import { graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function About() {
   const links = ["staff", "sponsors", "facilities"]
   const data = useStaticQuery(graphql`
-  {
-    page: markdownRemark(
-      fields: {slug: {eq: "about"}, category: {eq: "pages"}}
-    ) {
-      frontmatter {
-        abstract
-        slogen
+    {
+      about: markdownRemark(fields: { category: { eq: "home" } }) {
+        html
+        frontmatter {
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED)
+            }
+          }
+        }
       }
-      html
     }
-  }
   `)
   return (
-    <ContentPage pageTitle="About us" header="/images/about_header.jpg">
-      <div class="columns">
-        {links.map(link => (
-          <div class="column">
-            <div className={AboutStyle.card}>
-              <Link to={`/${link}/`}>
-                <span className={AboutStyle.arrow}></span>
-                <img src={`/images/about_${link}.jpg`} alt={`${link}`} />
-                <h2>{link}</h2>
-              </Link>
+    <section className="section is-medium has-background-light" id="about">
+      <div className="container">
+        <div className="columns is-centered">
+          <div className="column is-one-third">
+            <GatsbyImage
+              image={
+                data.about.frontmatter.image.childImageSharp.gatsbyImageData
+              }
+            />
+          </div>
+          <div className="column is-two-thirds text-content">
+            <div dangerouslySetInnerHTML={{ __html: data.about.html }}></div>
+            <div className="buttons">
+              <a href="#" className="button is-link is-large">
+                <span class="icon">
+                  <i class="fab fa-twitter"></i>
+                </span>
+              </a>
+              <a href="#" className="button is-link is-large">
+                <span class="icon">
+                  <i class="fab fa-facebook"></i>
+                </span>
+              </a>
+              <a href="#" className="button is-link is-large">
+                Master / PhD programmes
+              </a>
             </div>
           </div>
-        ))}
-      </div>
-      <div class="columns">
-        <div class="column is-two-thirds text-content">
-          <h4>
-            { data.page.frontmatter.abstract }
-          </h4>
-          <div dangerouslySetInnerHTML={{ __html: data.page.html }}></div>
-        </div>
-        <div class="column is-one-third is-flex has-text-centered">
-          <div className={AboutStyle.infoBox}>
-            <h1>{ data.page.frontmatter.slogen }</h1>
-          </div>
         </div>
       </div>
-    </ContentPage>
+      <div className="container mt-6">
+        <div className="columns is-centered has-text-centered">
+          <h1 className="is-size-2 has-text-weight-semibold">
+            Associated Centres
+          </h1>
+        </div>
+      </div>
+    </section>
   )
 }

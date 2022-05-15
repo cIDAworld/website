@@ -1,126 +1,81 @@
-import React, { Component } from "react"
-import { Link } from "gatsby"
+import React, { useState, useEffect } from "react"
+import { graphql, Link, useStaticQuery } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-export default class NavBar extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { sit: false, navbarActive: false }
-    this.onScroll = this.onScroll.bind(this)
-    this.handleNavbarBurgerClick = this.handleNavbarBurgerClick.bind(this)
+const NavBar = props => {
+  const [navTransparent, setNavTransparent] = useState(true)
+  const [navItems, setNavItems] = useState([
+    { name: "About", link: "/#about" },
+    { name: "What's on", link: "/boilerplate" },
+    { name: "Past Projects", link: "/past_projects" },
+    { name: "Members", link: "/members" },
+  ])
+
+  const changeTransparency = e => {
+    const y = e.path[1].scrollY
+    setNavTransparent(y < 300 ? true : false)
   }
-  componentDidMount() {
-    window.addEventListener("scroll", this.onScroll, false)
-  }
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.onScroll, false)
-  }
-  onScroll() {
-    if (window.screen.width > 680) {
-      this.setState({ sit: window.scrollY > 100 })
+  useEffect(() => {
+    window.addEventListener("scroll", changeTransparency)
+    return () => {
+      window.removeEventListener("scroll", changeTransparency)
     }
-  }
-  handleNavbarBurgerClick(event) {
-    this.setState(state => ({ navbarActive: !state.navbarActive }))
-  }
-  render() {
-    return (
-      <>
-        <div
-          id="header"
-          className={`header-home ${this.state.sit ? "sit" : ""}`}
+  }, [])
+
+  const data = useStaticQuery(graphql`
+    {
+      logo: file(relativePath: { eq: "logos/cida_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED, height: 60)
+        }
+      }
+    }
+  `)
+  return (
+    <nav
+      className={`navbar is-transparent is-fixed-top ${
+        navTransparent ? "has-no-bg-color" : "has-background-white"
+      }`}
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div className="navbar-brand">
+        <Link to="/" onClick={() => setNavTransparent(true)}>
+          <GatsbyImage
+            alt="Cida logo"
+            image={data.logo.childImageSharp.gatsbyImageData}
+            loading="eager"
+          />
+        </Link>
+        <a
+          role="button"
+          className="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
         >
-          <header
-            className="navbar"
-            role="navigation"
-            aria-label="main navigation"
-          >
-            <Link to="/">
-              <div id="logo" />
-              <div id="logo-line"></div>
-              <div id="logo-title"></div>
-            </Link>
-
-            <span
-              role="button"
-              className={`navbar-burger ${
-                this.state.navbarActive ? "is-active" : ""
-              }`}
-              aria-label="menu"
-              aria-expanded="false"
-              onKeyDown={this.handleNavbarBurgerClick}
-              onClick={this.handleNavbarBurgerClick}
-              tabIndex={0}
-            >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </span>
-
-            <nav
-              className={`navbar-menu
-                ${this.state.navbarActive ? "is-active" : ""}
-                ${this.props.bright ? "bright" : ""}
-              `}
-            >
-              <div className="navbar-start">
-                <div className="navbar-item has-dropdown is-hoverable navbar-outer-item first-menu-item">
-                  <Link to="/programmes/" className="navbar-link is-arrowless">
-                    Programmes
-                  </Link>
-                  <div className="navbar-dropdown">
-                    <Link
-                      className="navbar-item navbar-inner-item"
-                      to="/programmes/phd-programme/"
-                    >
-                      PhD Programme
-                    </Link>
-                    <Link
-                      className="navbar-item navbar-inner-item"
-                      to="/programmes/masters-programme/"
-                    >
-                      Masters Programme
-                    </Link>
-                  </div>
-                </div>
-                <Link className="navbar-item navbar-outer-item" to="/students/">
-                  Students
-                </Link>
-                <Link className="navbar-item navbar-outer-item" to="/projects/">
-                  Projects
-                </Link>
-                <div className="navbar-item has-dropdown is-hoverable navbar-outer-item">
-                  <Link className="navbar-link is-arrowless" to="/about/">
-                    About
-                  </Link>
-                  <div className="navbar-dropdown">
-                    <Link className="navbar-item navbar-inner-item" to="/staff/">
-                      Staff
-                    </Link>
-                    <Link className="navbar-item navbar-inner-item" to="/sponsors/">
-                      Sponsors
-                    </Link>
-                    <Link
-                      className="navbar-item navbar-inner-item"
-                      to="/facilities/"
-                    >
-                      Facilities
-                    </Link>
-                  </div>
-                </div>
-                <Link className="navbar-item navbar-outer-item" to="/partners/">
-                  Partners
-                </Link>
-                <Link className="navbar-item navbar-outer-item" to="/news/">
-                  News
-                </Link>
-                <Link className="navbar-item navbar-outer-item" to="/contact/">
-                  Contact
-                </Link>
-              </div>
-            </nav>
-          </header>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div className="navbar-menu">
+        <div className="navbar-end">
+          {navItems.map(item => {
+            return (
+              <Link
+                to={item.link}
+                className={`navbar-item has-text-${
+                  navTransparent ? "light" : "dark"
+                }`}
+              >
+                {item.name}
+              </Link>
+            )
+          })}
         </div>
-      </>
-    )
-  }
+      </div>
+    </nav>
+  )
 }
+
+export default NavBar

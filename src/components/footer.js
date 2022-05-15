@@ -1,53 +1,79 @@
 import React from "react"
+import { graphql, useStaticQuery, Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-export default function Footer() {
+const Footer = () => {
+  const data = useStaticQuery(graphql`
+    {
+      cidaLogo: file(relativePath: { eq: "logos/cida_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+      uniLogo: file(relativePath: { eq: "logos/essex_logo_white.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+    }
+  `)
   return (
-    <footer>
-      <div class="block">
-        <div id="footer-address">
-          <img src="/images/footer_logo.jpg" alt="MAT logo" />
-          <div>
-            <strong>Media and Arts Technology CDT</strong>
+    <footer className="footer has-background-dark">
+      <div className="container">
+        <div className="columns is-centered">
+          <div
+            className="column is-one-quarter is-flex is-flex-direction-column is-align-content-center is-justify-content-center"
+            id="footer-address"
+          >
+            <GatsbyImage
+              className="logo"
+              alt="cida logo"
+              image={data.cidaLogo.childImageSharp.gatsbyImageData}
+            />
+            Department of Government
             <br />
-            School of Electronic Engineering and Computer Science
+            University of Essex
             <br />
-            Queen Mary University of London.
+            Wivenhoe Park
             <br />
-            Room Eng. 102
-            <br />
-            Engineering Building
-            <br />
-            London, E1 4NS
+            Colchester CO4 3SQ
           </div>
-        </div>
-        <div id="footer-contact">
-          <div class="footer-block">
+          <div
+            className="column is-one-quarter is-flex is-flex-direction-column is-align-content-center is-justify-content-center"
+            id="footer-contact"
+          >
             <p>
               <strong>General Enquiries:</strong>
             </p>
-            <p>Tel: +44 (0)20 7882 5200</p>
+            <p>Tel: +44 (0) 1206 873333</p>
             <p>
-              <a href="mailto:mat-enquiries@qmul.ac.uk">
-                Email: mat-enquiries@qmul.ac.uk
+              <a href="mailto:enquiries@essex.ac.uk">
+                Email: enquiries@essex.ac.uk
               </a>
             </p>
           </div>
-        </div>
-        <div id="footer-queen-mary">
-          <div class="footer-block">
-            <img src="/images/footer_queen_mary.jpg" alt="QMUL ogo" />
-            <p>Funded by EPSRC &amp; AHRC</p>
-            <p>Hosted by Dept of EECS</p>
-            <p>Part of QMUL</p>
+          <div
+            className="column is-one-quarter is-flex is-flex-direction-column is-align-content-center is-justify-content-center"
+            id="footer-uni-logo"
+          >
+            <GatsbyImage
+              className="logo"
+              alt="cida logo"
+              image={data.uniLogo.childImageSharp.gatsbyImageData}
+            />
           </div>
-        </div>
-        <div id="footer-nick-watts">
-          <div class="footer-block">
+          <div
+            className="column is-one-quarter is-flex is-flex-direction-column is-align-content-center is-justify-content-center"
+            id="footer-credit"
+          >
             <p>Website design:</p>
-            <img src="/images/footer_nick_watts.jpg" alt="Nick Watts Design logo" />
             <p>
-              <a href="http://www.nickwattsdesign.co.uk" target="_blank" rel="noreferrer">
-                Nick Watts Design
+              <a
+                href="http://www.sebastianlobbers.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Sebastian L&ouml;bbers
               </a>
             </p>
           </div>
@@ -56,3 +82,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default Footer

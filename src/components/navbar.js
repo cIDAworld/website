@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 const NavBar = props => {
   const [navTransparent, setNavTransparent] = useState(true)
+  const [mobileMenu, setMobileMenu] = useState(false)
   const [navItems, setNavItems] = useState([
     { name: "About", link: "/#about" },
     { name: "What's on", link: "/boilerplate" },
@@ -40,7 +41,7 @@ const NavBar = props => {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <Link to="/" onClick={() => setNavTransparent(true)}>
+        <Link to="/">
           <GatsbyImage
             alt="Cida logo"
             image={data.logo.childImageSharp.gatsbyImageData}
@@ -49,16 +50,21 @@ const NavBar = props => {
         </Link>
         <a
           role="button"
-          className="navbar-burger"
+          className={`navbar-burger ${!mobileMenu ? "" : "is-active"}`}
           aria-label="menu"
           aria-expanded="false"
+          onClick={() => setMobileMenu(!mobileMenu)}
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <div className="navbar-menu">
+      <div
+        className={`navbar-menu has-background-white ${
+          !mobileMenu ? "" : "is-active"
+        }`}
+      >
         <div className="navbar-end">
           {navItems.map(item => {
             return (

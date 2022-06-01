@@ -1,4 +1,5 @@
 ---
+slug: "/members/karen-miller"
 name: "Karen Miller"
 role: "PhD student"
 intro: "Researching the influence of the name Karen on social behaviour"

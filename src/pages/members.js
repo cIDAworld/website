@@ -12,7 +12,9 @@ const Members = () => {
         sort: { fields: frontmatter___role }
       ) {
         nodes {
+          id
           frontmatter {
+            slug
             name
             role
             intro
@@ -26,16 +28,17 @@ const Members = () => {
       }
     }
   `)
-  useEffect(() => {
-    console.log(data.allMarkdownRemark.nodes)
-  })
   return (
     <ContentPage pageTitle="Members">
       <div className="container">
         <div className="columns is-multiline is-mobile">
           {data.allMarkdownRemark.nodes.map(element => (
-            <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile is-flex">
+            <div
+              className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
+              key={element.id}
+            >
               <MemberCard
+                slug={element.frontmatter.slug}
                 name={element.frontmatter.name}
                 role={element.frontmatter.role}
                 intro={element.frontmatter.intro}

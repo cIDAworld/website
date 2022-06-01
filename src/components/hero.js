@@ -38,11 +38,11 @@ const Hero = props => {
         loading="eager"
         image={data.logo.childImageSharp.gatsbyImageData}
       />
-      <a href="#about" className="has-text-light">
+      <Link to="/#about" className="has-text-light">
         <span className="icon is-large">
-          <i class="fas fa-2x fa-circle-down"></i>
+          <i className="fas fa-2x fa-circle-down"></i>
         </span>
-      </a>
+      </Link>
     </>
   )
 
@@ -66,7 +66,7 @@ const Hero = props => {
         image={data.hero.frontmatter.image.childImageSharp.gatsbyImageData}
       />
       <div className="hero-body text-overlay is-flex-direction-column is-justify-content-center">
-        {props.title ? smallHero : landingHero}
+        {!props.title ? landingHero : smallHero}
       </div>
       <div className="hero-foot text-overlay is-flex-direction-row is-justify-content-center"></div>
     </section>

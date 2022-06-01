@@ -1,4 +1,5 @@
 ---
+slug: "/members/jane-doe"
 name: "Jane Doe"
 role: "Academic Staff"
 intro: "Professor for Reading and Writing Papers"

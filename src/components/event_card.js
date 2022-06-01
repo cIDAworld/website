@@ -2,27 +2,27 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const MemberCard = props => {
+const EventCard = props => {
   return (
     <div className="card is-flex is-flex-direction-column is-flex-grow-1">
       <Link to={`${props.slug}/#header`}>
         <div className="card-image">
           <figure className="image">
-            <GatsbyImage alt="picture of cida member" image={props.image} />
+            <GatsbyImage alt="picture of event" image={props.image} />
           </figure>
         </div>
         <div className="card-content">
           <div className="media">
             <div className="media-content">
-              <p className="title is-4">{props.name}</p>
-              <p className="subtitle is-6">{props.role}</p>
+              <p className="title is-4">{props.title}</p>
+              <p className="subtitle is-6">{props.date}</p>
             </div>
           </div>
-          <div className="content">{props.intro}</div>
+          <div className="content"></div>
         </div>
       </Link>
     </div>
   )
 }
 
-export default MemberCard
+export default EventCard

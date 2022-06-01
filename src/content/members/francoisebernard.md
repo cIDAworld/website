@@ -1,8 +1,10 @@
 ---
+slug: "/members/francoise-bernard"
 name: "Francoise Bernard"
 role: "PhD student"
 intro: "I am interested in books and stuff"
 website: "http://www.google.com"
+twitter: "@9SFRL2"
 image: "./francoisebernard.jpeg"
 ---
 

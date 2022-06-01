@@ -18,18 +18,20 @@ const Footer = () => {
     }
   `)
   return (
-    <footer className="footer has-background-dark">
-      <div className="container">
-        <div className="columns is-centered">
-          <div
-            className="column is-one-quarter is-flex is-flex-direction-column is-align-content-center is-justify-content-center"
-            id="footer-address"
+    <footer className="footer has-background-dark has-text-light">
+      <div className="container is-flex is-justify-content-space-evenly is-align-items-center">
+        <div id="footer-address">
+          <a
+            href="https://www.essex.ac.uk/centres-and-institutes/ideology-and-discourse-analysis"
+            target="_blank"
           >
             <GatsbyImage
               className="logo"
               alt="cida logo"
               image={data.cidaLogo.childImageSharp.gatsbyImageData}
             />
+          </a>
+          <address>
             Department of Government
             <br />
             University of Essex
@@ -37,46 +39,36 @@ const Footer = () => {
             Wivenhoe Park
             <br />
             Colchester CO4 3SQ
-          </div>
-          <div
-            className="column is-one-quarter is-flex is-flex-direction-column is-align-content-center is-justify-content-center"
-            id="footer-contact"
-          >
-            <p>
-              <strong>General Enquiries:</strong>
-            </p>
-            <p>Tel: +44 (0) 1206 873333</p>
-            <p>
-              <a href="mailto:enquiries@essex.ac.uk">
-                Email: enquiries@essex.ac.uk
-              </a>
-            </p>
-          </div>
-          <div
-            className="column is-one-quarter is-flex is-flex-direction-column is-align-content-center is-justify-content-center"
-            id="footer-uni-logo"
-          >
-            <GatsbyImage
-              className="logo"
-              alt="cida logo"
-              image={data.uniLogo.childImageSharp.gatsbyImageData}
-            />
-          </div>
-          <div
-            className="column is-one-quarter is-flex is-flex-direction-column is-align-content-center is-justify-content-center"
-            id="footer-credit"
-          >
-            <p>Website design:</p>
-            <p>
-              <a
-                href="http://www.sebastianlobbers.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Sebastian L&ouml;bbers
-              </a>
-            </p>
-          </div>
+          </address>
+        </div>
+        <div id="footer-contact">
+          <p>
+            <b>General Enquiries:</b>
+          </p>
+          <p>Tel: +44 (0) 1206 873333</p>
+          <p>
+            Email: &nbsp;
+            <a href="mailto:enquiries@essex.ac.uk">enquiries@essex.ac.uk</a>
+          </p>
+        </div>
+        <div id="footer-uni-logo">
+          <GatsbyImage
+            className="logo"
+            alt="cida logo"
+            image={data.uniLogo.childImageSharp.gatsbyImageData}
+          />
+        </div>
+        <div id="footer-credit">
+          <p>Website design:</p>
+          <p>
+            <a
+              href="http://www.sebastianlobbers.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Sebastian L&ouml;bbers
+            </a>
+          </p>
         </div>
       </div>
     </footer>

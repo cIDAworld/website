@@ -1,13 +1,15 @@
 import React from "react"
-import "./mystyles.scss"
+import "../styles/mystyles.scss"
 
 import Layout from "../components/layout"
-import About from "./about"
+import AboutContent from "./aboutContent"
 
 export default function Home() {
   return (
     <Layout>
-      <About />
+      <section className="section is-medium has-background-light" id="about">
+        <AboutContent />
+      </section>
     </Layout>
   )
 }

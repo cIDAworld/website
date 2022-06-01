@@ -1,4 +1,5 @@
 ---
+slug: "/members/max-mustermann"
 name: "Max Mustermann"
 role: "Academic Staff"
 intro: "Researcher in doing research"

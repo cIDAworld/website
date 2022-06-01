@@ -1,4 +1,5 @@
 ---
+slug: "/members/pavel-novak"
 name: "Pavel Novak"
 role: "PhD student"
 intro: "Getting a PhD is hard work"

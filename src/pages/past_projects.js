@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -24,15 +24,15 @@ const PastProjects = () => {
       }
     }
   `)
-  useEffect(() => {
-    console.log(data.allMarkdownRemark.nodes)
-  })
   return (
     <ContentPage pageTitle="Past Projects">
       <div className="container">
         <div className="columns is-multiline">
           {data.allMarkdownRemark.nodes.map(element => (
-            <div className="column is-half is-flex">
+            <div
+              className="column is-half is-flex"
+              key={element.frontmatter.title}
+            >
               <div className="box is-flex is-flex-direction-column is-flex-grow-1">
                 <h1 className="is-size-3">{element.frontmatter.title}</h1>
 

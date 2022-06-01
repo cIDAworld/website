@@ -6,14 +6,14 @@ const NavBar = props => {
   const [navTransparent, setNavTransparent] = useState(true)
   const [mobileMenu, setMobileMenu] = useState(false)
   const [navItems, setNavItems] = useState([
-    { name: "About", link: "/#about" },
-    { name: "What's on", link: "/boilerplate" },
+    { name: "About", link: "/about" },
+    { name: "What's on", link: "/whats_on" },
     { name: "Past Projects", link: "/past_projects" },
     { name: "Members", link: "/members" },
   ])
 
-  const changeTransparency = e => {
-    const y = e.path[1].scrollY
+  const changeTransparency = () => {
+    const y = window.pageYOffset
     setNavTransparent(y < 300 ? true : false)
   }
   useEffect(() => {
@@ -50,7 +50,9 @@ const NavBar = props => {
         </Link>
         <a
           role="button"
-          className={`navbar-burger ${!mobileMenu ? "" : "is-active"}`}
+          className={`navbar-burger ${
+            !mobileMenu ? "" : "is-active"
+          } has-text-${navTransparent ? "light" : "dark"}`}
           aria-label="menu"
           aria-expanded="false"
           onClick={() => setMobileMenu(!mobileMenu)}
@@ -66,8 +68,11 @@ const NavBar = props => {
             return (
               <Link
                 to={item.link}
+                key={item.name}
                 className={`navbar-item has-text-${
-                  navTransparent ? "light" : "dark"
+                  navTransparent && !mobileMenu ? "light" : "dark"
+                } has-border-${
+                  navTransparent && !mobileMenu ? "light" : "dark"
                 }`}
               >
                 {item.name}

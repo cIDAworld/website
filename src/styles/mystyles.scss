@@ -1,11 +1,17 @@
 @charset "utf-8";
 
+
 // Colour schemes
 $link: #5d246b;
+$light: hsl(0, 0%, 96%);
+$dark: hsl(0, 0%, 21%);
+$white: #fff;
 
 
 // Spacing 
 $spacing-values: ("nav-bar": 100px);
+
+@import "~bulma/bulma.sass";
 
 html {
     box-sizing: border-box;
@@ -13,6 +19,14 @@ html {
 }
 .has-no-bg-color {
     background-color: transparent !important;
+}
+
+.has-border-light {
+    border-color: $light !important;
+}
+
+.has-border-dark {
+    border-color: $dark !important;
 }
 
 .hero {
@@ -42,12 +56,22 @@ html {
     .text-overlay {
         z-index: 1;
     }
+
+
+}
+
+.hero.is-medium {
+    .hero-body {
+        @include mobile {
+            padding-top: 10rem;
+        }   
+    }    
 }
 
 .navbar {
     transition: 1s;
     .navbar-item:hover {
-        border: 2px solid $link;
+        border: 2px solid $light;
     }
 } 
 
@@ -55,6 +79,29 @@ html {
     .logo {
         max-width: 200px;
     }
+
+    a {
+        color: $light;
+        text-decoration-line: underline;
+    }
+
+    a:hover {
+        color: $white;
+    }
+
+    .container {   
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    .container > div {
+        padding: 0 1rem;
+        @include mobile {
+            margin-bottom: 3rem;
+        }
+    }
+
 }
 
 .section {
@@ -63,7 +110,16 @@ html {
     }
 }
 
+.card {
+    a {
+        color: $dark;
+    }
+    a:hover {
+        color: $black;
+    }
+}
 
 
-@import "~bulma/bulma.sass";
+
+
 

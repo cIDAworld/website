@@ -1,4 +1,5 @@
 ---
+slug: "/members/olivia-sanchez"
 name: "Olivia Sanchez"
 role: "PhD student"
 intro: "All study and no play make Olivia a dull girl"

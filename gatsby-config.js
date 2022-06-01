@@ -7,6 +7,9 @@
 require("dotenv").config()
 
 module.exports = {
+  siteMetadata: {
+    title: "Centre for Ideology and Discourse Analysis",
+  },
   /* Your site config here */
   pathPrefix: "",
   plugins: [

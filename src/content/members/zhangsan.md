@@ -1,4 +1,5 @@
 ---
+slug: "/members/zhang-san"
 name: "Zhang San"
 role: "PhD student"
 intro: "Researching the impact of research on research impact"

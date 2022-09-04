@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import ContentPage from "../components/content_page"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -52,10 +52,18 @@ export default function Template({
         </div>
         <div className="columns">
           <div className="column is-one-third">
-            <GatsbyImage
-              alt={`Image of ${frontmatter.name}`}
-              image={frontmatter.image.childImageSharp.gatsbyImageData}
-            />
+            {frontmatter.image ? (
+              <GatsbyImage
+                alt={`Image of ${frontmatter.name}`}
+                image={frontmatter.image.childImageSharp.gatsbyImageData}
+              />
+            ) : (
+              <StaticImage
+                alt="default profile picture as no profile picture was specified"
+                src="../../static/defaultprofile.png"
+              />
+            )}
+
             <aside>
               <b>Role: </b>
               {frontmatter.role} <br />

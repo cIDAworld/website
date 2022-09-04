@@ -8,7 +8,8 @@ const NavBar = props => {
   const [navItems, setNavItems] = useState([
     { name: "About", link: "/about" },
     { name: "What's on", link: "/whats_on" },
-    { name: "Past Projects", link: "/past_projects" },
+    { name: "Archive", link: "/archive" },
+    { name: "Publications", link: "/publications" },
     { name: "Members", link: "/members" },
   ])
 

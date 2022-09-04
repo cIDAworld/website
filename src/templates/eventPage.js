@@ -13,11 +13,11 @@ export default function Template({
     <ContentPage pageTitle="What's on" sectionId="header">
       <div className="container">
         <EventPage
-          title={frontmatter.title}
+          title={frontmatter.title || "New Event"}
           date={frontmatter.date}
           time={frontmatter.time}
           place={frontmatter.place}
-          image={frontmatter.image.childImageSharp.gatsbyImageData}
+          image={frontmatter.image?.childImageSharp.gatsbyImageData}
           text={html}
         />
       </div>

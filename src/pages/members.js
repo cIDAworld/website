@@ -20,7 +20,7 @@ const Members = () => {
             intro
             image {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+                gatsbyImageData(layout: CONSTRAINED, aspectRatio: 1.0)
               }
             }
           }
@@ -43,7 +43,7 @@ const Members = () => {
                 role={element.frontmatter.role}
                 intro={element.frontmatter.intro}
                 image={
-                  element.frontmatter.image.childImageSharp.gatsbyImageData
+                  element.frontmatter.image?.childImageSharp.gatsbyImageData
                 }
               />
             </div>

@@ -4,12 +4,16 @@ import { graphql, useStaticQuery } from "gatsby"
 import ContentPage from "../components/content_page"
 import EventPage from "../components/event_page"
 import EventCard from "../components/event_card"
+import TwitterCard from "../components/twitter_card"
 
 const WhatsOn = () => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
-        filter: { fields: { category: { eq: "whatson" } } }
+        filter: {
+          fields: { category: { eq: "projects" } }
+          hasPassed: { eq: false }
+        }
         sort: { fields: frontmatter___date }
       ) {
         nodes {
@@ -21,6 +25,7 @@ const WhatsOn = () => {
             date(formatString: "dddd, D MMMM yyyy")
             time
             place
+            highlight
             image {
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, aspectRatio: 1)
@@ -29,52 +34,94 @@ const WhatsOn = () => {
           }
         }
       }
+      allTwitterStatusesUserTimelineTimeline(limit: 12) {
+        nodes {
+          full_text
+          created_at
+          id_str
+          image {
+            childImageSharp {
+              gatsbyImageData(height: 200, width: 600)
+            }
+          }
+          retweeted_status {
+            user {
+              name
+              profile_banner_url
+            }
+          }
+        }
+      }
     }
   `)
 
-  const nothingNew = (
-    <h1 className="is-size-2">There currently isn't anything coming up.</h1>
-  )
+  let highlightIndex = null
 
-  const news = !data.allMarkdownRemark ? (
+  const events = !data.allMarkdownRemark ? (
     <h1 className="is-size-2">There currently isn't anything coming up.</h1>
   ) : (
+    <div className="columns is-multiline is-mobile">
+      {data.allMarkdownRemark.nodes.map((element, i) => {
+        if (!highlightIndex && element.frontmatter.highlight) {
+          highlightIndex = i
+          return ""
+        }
+
+        return (
+          <div
+            className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
+            key={element.id}
+          >
+            <EventCard
+              slug={element.frontmatter.slug}
+              title={element.frontmatter.title}
+              date={element.frontmatter.date}
+              text={element.html}
+              image={element.frontmatter.image?.childImageSharp.gatsbyImageData}
+            />
+          </div>
+        )
+      })}
+    </div>
+  )
+
+  const highlight = highlightIndex ? (
     <>
+      {" "}
       <EventPage
-        title={data.allMarkdownRemark.nodes[0].frontmatter.title}
-        date={data.allMarkdownRemark.nodes[0].frontmatter.date}
-        time={data.allMarkdownRemark.nodes[0].frontmatter.time}
-        place={data.allMarkdownRemark.nodes[0].frontmatter.place}
-        text={data.allMarkdownRemark.nodes[0].html}
+        title={data.allMarkdownRemark.nodes[highlightIndex].frontmatter.title}
+        date={data.allMarkdownRemark.nodes[highlightIndex].frontmatter.date}
+        time={data.allMarkdownRemark.nodes[highlightIndex].frontmatter.time}
+        place={data.allMarkdownRemark.nodes[highlightIndex].frontmatter.place}
+        text={data.allMarkdownRemark.nodes[highlightIndex].html}
         image={
-          data.allMarkdownRemark.nodes[0].frontmatter.image.childImageSharp
-            .gatsbyImageData
+          data.allMarkdownRemark.nodes[highlightIndex].frontmatter.image
+            ?.childImageSharp.gatsbyImageData
         }
       />
-      <h1 className="title is-medium mt-6">What's more...</h1>
-      <div className="columns">
-        {data.allMarkdownRemark.nodes.map((element, i) => {
-          if (i === 0) {
-            return ""
-          }
+    </>
+  ) : (
+    ""
+  )
 
-          return (
-            <div
-              className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
-              key={element.id}
-            >
-              <EventCard
-                slug={element.frontmatter.slug}
-                title={element.frontmatter.title}
-                date={element.frontmatter.date}
-                text={element.html}
-                image={
-                  element.frontmatter.image.childImageSharp.gatsbyImageData
-                }
-              />
-            </div>
-          )
-        })}
+  const twitterNews = (
+    <>
+      <h1 className="title is-medium mt-6">News</h1>
+      <div className="columns is-multiline is-mobile">
+        {data.allTwitterStatusesUserTimelineTimeline.nodes.map((element, i) => (
+          <div
+            className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
+            key={element.id_str}
+          >
+            <TwitterCard
+              author={element.retweeted_status?.user.name || "cIDA"}
+              date={new Date(element.created_at).toDateString()}
+              text={element.full_text}
+              image={element.image.childImageSharp.gatsbyImageData}
+              link={`https://www.twitter.com/cIDA_essex/status/${element.id_str}`}
+            />
+          </div>
+        ))}
       </div>
     </>
   )
@@ -82,22 +129,9 @@ const WhatsOn = () => {
   return (
     <ContentPage pageTitle="What's on">
       <div className="container">
-        {news}
-
-        <div className="columns">
-          <div className="column is-full is-size-5">
-            <p>
-              You can find more about current affairs on&nbsp;
-              <a href="https://twitter.com/cida_essex?lang=en" target="_blank">
-                Twitter
-              </a>
-              &nbsp;or&nbsp;
-              <a href="https://www.facebook.com/cIDA.essex/" target="_blank">
-                Facebook
-              </a>
-            </p>
-          </div>
-        </div>
+        {highlight}
+        {events}
+        {twitterNews}
       </div>
     </ContentPage>
   )

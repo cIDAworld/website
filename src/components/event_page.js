@@ -1,5 +1,5 @@
 import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 const EventPage = props => {
   const date = props.date ? (
@@ -39,7 +39,14 @@ const EventPage = props => {
       </div>
       <div className="columns">
         <div className="column is-one-third">
-          <GatsbyImage alt="event image" image={props.image} />
+          {props.image ? (
+            <GatsbyImage alt={`Image of ${props.title}`} image={props.image} />
+          ) : (
+            <StaticImage
+              alt="default event picture as no event picture was specified"
+              src="../../static/defaultevent.png"
+            />
+          )}
           <aside>
             {date}
             {time}

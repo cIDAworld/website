@@ -1,5 +1,7 @@
 const { graphql } = require("gatsby")
+const fs = require("fs")
 const path = require("path")
+const { createRemoteFileNode } = require("gatsby-source-filesystem")
 
 exports.onCreateNode = async ({
   node,
@@ -20,6 +22,28 @@ exports.onCreateNode = async ({
     }
     for (const [name, value] of Object.entries(fields)) {
       createNodeField({ node, name, value })
+    }
+  }
+
+  if (node.internal.type === "twitterStatusesUserTimelineTimeline") {
+    const image_url =
+      node?.retweeted_status?.user?.profile_banner_url ||
+      "https://pbs.twimg.com/profile_banners/926622800873484289/1516727915/1500x500"
+    if (image_url) {
+      await createRemoteFileNode({
+        url: image_url,
+        parentNodeId: node.id,
+        store,
+        getCache,
+        createNode,
+        createNodeId,
+      })
+        .then(fileNode => {
+          node.image___NODE = fileNode.id
+        })
+        .catch(x => {
+          console.warn("Fail to fetch twitter profile image:", x)
+        })
     }
   }
 }
@@ -44,7 +68,7 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
       events: allMarkdownRemark(
-        filter: { fields: { category: { eq: "whatson" } } }
+        filter: { fields: { category: { eq: "projects" } } }
       ) {
         edges {
           node {
@@ -76,4 +100,19 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
+}
+
+exports.createSchemaCustomization = ({ actions, schema, getNode }) => {
+  actions.createTypes([
+    schema.buildObjectType({
+      name: "MarkdownRemark",
+      interfaces: ["Node"],
+      fields: {
+        hasPassed: {
+          type: "Boolean!",
+          resolve: s => new Date(s.frontmatter.date) < new Date(),
+        },
+      },
+    }),
+  ])
 }

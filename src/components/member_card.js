@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 const MemberCard = props => {
   return (
@@ -8,7 +8,14 @@ const MemberCard = props => {
       <Link to={`${props.slug}/#header`}>
         <div className="card-image">
           <figure className="image">
-            <GatsbyImage alt="picture of cida member" image={props.image} />
+            {props.image ? (
+              <GatsbyImage alt="picture of cida member" image={props.image} />
+            ) : (
+              <StaticImage
+                alt="default profile picture as no profile picture was specified"
+                src="../../static/defaultprofile.png"
+              />
+            )}
           </figure>
         </div>
         <div className="card-content">

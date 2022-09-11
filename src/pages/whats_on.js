@@ -11,16 +11,17 @@ const WhatsOn = () => {
     {
       allMarkdownRemark(
         filter: {
-          fields: { category: { eq: "projects" } }
-          hasPassed: { eq: false }
+          fields: { category: { eq: "projects" }, hasPassed: { eq: false } }
         }
         sort: { fields: frontmatter___date }
       ) {
         nodes {
           id
           html
-          frontmatter {
+          fields {
             slug
+          }
+          frontmatter {
             title
             date(formatString: "dddd, D MMMM yyyy")
             time
@@ -34,7 +35,10 @@ const WhatsOn = () => {
           }
         }
       }
-      allTwitterStatusesUserTimelineTimeline(limit: 12) {
+      allTwitterStatusesUserTimelineTimeline(
+        sort: { fields: fields___date, order: DESC }
+        limit: 12
+      ) {
         nodes {
           full_text
           created_at
@@ -73,7 +77,7 @@ const WhatsOn = () => {
             key={element.id}
           >
             <EventCard
-              slug={element.frontmatter.slug}
+              slug={element.fields.slug}
               title={element.frontmatter.title}
               date={element.frontmatter.date}
               text={element.html}

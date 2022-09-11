@@ -1,5 +1,4 @@
 ---
-slug: "/whats_on/chomsky"
 title: "Noam Chomsky giving a talk"
 date: "2023-02-05"
 time: "09:00"

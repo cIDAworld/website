@@ -1,5 +1,4 @@
 ---
-slug: "/whats_on/workshop"
 title: "Workshop about post-structural feminism"
 date: "2022-07-05"
 time: "13:00"

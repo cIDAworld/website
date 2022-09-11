@@ -1,5 +1,4 @@
 ---
-slug: "/whats_on/dummy"
 ---
 
 Anim ipsum do deserunt officia. Minim anim dolor labore consectetur aliquip adipisicing ullamco culpa. Ut anim est est nostrud laborum.

@@ -7,10 +7,13 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, fields, html } = markdownRemark
 
   return (
-    <ContentPage pageTitle="What's on" sectionId="header">
+    <ContentPage
+      pageTitle={fields.hasPassed ? "Archive" : "What's on"}
+      sectionId="header"
+    >
       <div className="container">
         <EventPage
           title={frontmatter.title || "New Event"}
@@ -27,10 +30,12 @@ export default function Template({
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      fields {
+        hasPassed
+      }
       frontmatter {
-        slug
         title
         date(formatString: "dddd, D MMMM yyyy")
         time

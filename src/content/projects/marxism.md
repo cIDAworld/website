@@ -1,5 +1,4 @@
 ---
-slug: "/whats_on/conference"
 title: "Conference on contemporary Marxism"
 date: "2023-01-05"
 time: "09:00 - 17:00"

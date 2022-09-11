@@ -15,7 +15,7 @@ const groupByYear = array => {
           key={element.id}
         >
           <EventCard
-            slug={element.frontmatter.slug}
+            slug={element.fields.slug}
             title={element.frontmatter.title}
             date={element.frontmatter.date}
             text={element.html}
@@ -49,16 +49,17 @@ const PastProjects = () => {
     {
       allMarkdownRemark(
         filter: {
-          fields: { category: { eq: "projects" } }
-          hasPassed: { eq: true }
+          fields: { category: { eq: "projects" }, hasPassed: { eq: true } }
         }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         nodes {
           id
           html
-          frontmatter {
+          fields {
             slug
+          }
+          frontmatter {
             title
             date(formatString: "dddd, D MMMM yyyy")
             time

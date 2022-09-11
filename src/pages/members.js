@@ -13,8 +13,10 @@ const Members = () => {
       ) {
         nodes {
           id
-          frontmatter {
+          fields {
             slug
+          }
+          frontmatter {
             name
             role
             intro
@@ -38,7 +40,7 @@ const Members = () => {
               key={element.id}
             >
               <MemberCard
-                slug={element.frontmatter.slug}
+                slug={element.fields.slug}
                 name={element.frontmatter.name}
                 role={element.frontmatter.role}
                 intro={element.frontmatter.intro}

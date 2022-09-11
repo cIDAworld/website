@@ -1,5 +1,4 @@
 ---
-slug: "/whats_on/paper"
 title: "Paper discussion"
 date: "2022-04-01"
 time: "09:30"

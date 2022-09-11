@@ -15,17 +15,38 @@ exports.onCreateNode = async ({
   const contentDir = path.resolve("./src/content")
 
   if (node.internal.type === "MarkdownRemark") {
+    const category = path.dirname(
+      path.relative(contentDir, node.fileAbsolutePath)
+    )
     const fields = {
-      category: path.dirname(path.relative(contentDir, node.fileAbsolutePath)),
-      slug: path.basename(node.fileAbsolutePath, ".md").replace("_", "-"),
+      category: category,
+      slug:
+        "/" +
+        category +
+        "/" +
+        path.basename(node.fileAbsolutePath, ".md").replace("_", "-"),
       sortYear: node.frontmatter.year || "1970",
     }
+
+    if (category === "projects") {
+      const expireDate = node.frontmatter.expireDate
+        ? new Date(node.frontmatter.expireDate)
+        : new Date()
+      const hasPassed = new Date(node.frontmatter.date) < expireDate
+      const newSlug = hasPassed ? "archive" : "whats_on"
+      fields["slug"] = fields["slug"].replace("projects", newSlug)
+      fields["hasPassed"] = hasPassed
+    }
+
     for (const [name, value] of Object.entries(fields)) {
       createNodeField({ node, name, value })
     }
   }
 
   if (node.internal.type === "twitterStatusesUserTimelineTimeline") {
+    const date = new Date(node.created_at)
+    createNodeField({ node, name: "date", value: date.toISOString() })
+
     const image_url =
       node?.retweeted_status?.user?.profile_banner_url ||
       "https://pbs.twimg.com/profile_banners/926622800873484289/1516727915/1500x500"
@@ -61,7 +82,7 @@ exports.createPages = async ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            frontmatter {
+            fields {
               slug
             }
           }
@@ -72,7 +93,7 @@ exports.createPages = async ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            frontmatter {
+            fields {
               slug
             }
           }
@@ -83,36 +104,21 @@ exports.createPages = async ({ actions, graphql }) => {
 
   queryResults.data.members.edges.forEach(({ node }) => {
     createPage({
-      path: node.frontmatter.slug,
+      path: node.fields.slug,
       component: membersTemplate,
       context: {
-        slug: node.frontmatter.slug,
+        slug: node.fields.slug,
       },
     })
   })
 
   queryResults.data.events.edges.forEach(({ node }) => {
     createPage({
-      path: node.frontmatter.slug,
+      path: node.fields.slug,
       component: eventsTemplate,
       context: {
-        slug: node.frontmatter.slug,
+        slug: node.fields.slug,
       },
     })
   })
-}
-
-exports.createSchemaCustomization = ({ actions, schema, getNode }) => {
-  actions.createTypes([
-    schema.buildObjectType({
-      name: "MarkdownRemark",
-      interfaces: ["Node"],
-      fields: {
-        hasPassed: {
-          type: "Boolean!",
-          resolve: s => new Date(s.frontmatter.date) < new Date(),
-        },
-      },
-    }),
-  ])
 }

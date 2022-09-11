@@ -1,5 +1,4 @@
 ---
-slug: "/whats_on/metaphysical_picnic"
 title: "Metaphysical Picnic"
 date: "2022-12-02"
 time: "14:00"

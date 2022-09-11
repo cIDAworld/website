@@ -52,6 +52,16 @@ const AboutContent = () => {
                   <i className="fab fa-facebook"></i>
                 </span>
               </a>
+              <a
+                href="https://www.youtube.com/channel/UCwemasspu9Mr4TuMR4Fj4uA"
+                target="_blank"
+                className="button is-link is-large"
+              >
+                <span className="icon">
+                  <i className="fab fa-youtube"></i>
+                </span>
+              </a>
+
               <a href="#" className="button is-link is-large">
                 Master / PhD programmes
               </a>

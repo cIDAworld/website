@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import ContentPage from "../components/content_page"
@@ -13,7 +13,7 @@ const WhatsOn = () => {
         filter: {
           fields: { category: { eq: "projects" }, hasPassed: { eq: false } }
         }
-        sort: { fields: frontmatter___date }
+        sort: { fields: [frontmatter___highlight, frontmatter___date] }
       ) {
         nodes {
           id
@@ -59,53 +59,49 @@ const WhatsOn = () => {
     }
   `)
 
-  let highlightIndex = null
+  const processedData = useMemo(
+    () =>
+      !data.allMarkdownRemark ? (
+        <h1 className="is-size-2">There currently isn't anything coming up.</h1>
+      ) : (
+        <div className="columns is-multiline is-mobile">
+          {data.allMarkdownRemark.nodes.map((element, i) => {
+            if (element.frontmatter.highlight) {
+              return (
+                <EventPage
+                  title={element.frontmatter.title}
+                  date={element.frontmatter.date}
+                  time={element.frontmatter.time}
+                  place={element.frontmatter.place}
+                  text={element.html}
+                  image={
+                    element.frontmatter.image?.childImageSharp.gatsbyImageData
+                  }
+                  key={element.id}
+                />
+              )
+            }
 
-  const events = !data.allMarkdownRemark ? (
-    <h1 className="is-size-2">There currently isn't anything coming up.</h1>
-  ) : (
-    <div className="columns is-multiline is-mobile">
-      {data.allMarkdownRemark.nodes.map((element, i) => {
-        if (!highlightIndex && element.frontmatter.highlight) {
-          highlightIndex = i
-          return ""
-        }
-
-        return (
-          <div
-            className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
-            key={element.id}
-          >
-            <EventCard
-              slug={element.fields.slug}
-              title={element.frontmatter.title}
-              date={element.frontmatter.date}
-              text={element.html}
-              image={element.frontmatter.image?.childImageSharp.gatsbyImageData}
-            />
-          </div>
-        )
-      })}
-    </div>
-  )
-
-  const highlight = highlightIndex ? (
-    <>
-      {" "}
-      <EventPage
-        title={data.allMarkdownRemark.nodes[highlightIndex].frontmatter.title}
-        date={data.allMarkdownRemark.nodes[highlightIndex].frontmatter.date}
-        time={data.allMarkdownRemark.nodes[highlightIndex].frontmatter.time}
-        place={data.allMarkdownRemark.nodes[highlightIndex].frontmatter.place}
-        text={data.allMarkdownRemark.nodes[highlightIndex].html}
-        image={
-          data.allMarkdownRemark.nodes[highlightIndex].frontmatter.image
-            ?.childImageSharp.gatsbyImageData
-        }
-      />
-    </>
-  ) : (
-    ""
+            return (
+              <div
+                className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
+                key={element.id}
+              >
+                <EventCard
+                  slug={element.fields.slug}
+                  title={element.frontmatter.title}
+                  date={element.frontmatter.date}
+                  text={element.html}
+                  image={
+                    element.frontmatter.image?.childImageSharp.gatsbyImageData
+                  }
+                />
+              </div>
+            )
+          })}
+        </div>
+      ),
+    [data]
   )
 
   const twitterNews = (
@@ -133,8 +129,7 @@ const WhatsOn = () => {
   return (
     <ContentPage pageTitle="What's on">
       <div className="container">
-        {highlight}
-        {events}
+        {processedData}
         {twitterNews}
       </div>
     </ContentPage>

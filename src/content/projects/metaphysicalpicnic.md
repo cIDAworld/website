@@ -4,6 +4,7 @@ date: "2022-12-02"
 time: "14:00"
 place: "Earth"
 image: "./picnic.jpg"
+category: ["event"]
 highlight: true
 ---
 

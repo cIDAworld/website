@@ -31,8 +31,8 @@ exports.onCreateNode = async ({
     if (category === "projects") {
       const expireDate = node.frontmatter.expireDate
         ? new Date(node.frontmatter.expireDate)
-        : new Date()
-      const hasPassed = new Date(node.frontmatter.date) < expireDate
+        : new Date(node.frontmatter.date)
+      const hasPassed = new Date() > expireDate
       const newSlug = hasPassed ? "archive" : "whats_on"
       fields["slug"] = fields["slug"].replace("projects", newSlug)
       fields["hasPassed"] = hasPassed

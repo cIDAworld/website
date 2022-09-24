@@ -17,12 +17,18 @@ const EventCard = props => {
               />
             )}
           </figure>
+          <div className="tags is-overlay is-align-items-start is-justify-content-left p-3">
+            {props.category?.map(e => (
+              <span className="tag is-capitalized is-white">{e}</span>
+            ))}
+          </div>
         </div>
+
         <div className="card-content">
           <div className="media">
             <div className="media-content">
-              <p className="title is-4">{props.title || "New Event"}</p>
               <p className="subtitle is-6">{props.date || ""}</p>
+              <p className="title is-4">{props.title || "New Event"} </p>
             </div>
           </div>
           <div className="content"></div>

@@ -1,47 +1,75 @@
-import React from "react"
+import React, { useState, useMemo, useCallback } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import ContentPage from "../components/content_page"
 import EventCard from "../components/event_card"
+import FilterBar from "../components/filterBar"
 
+// Create an object where the keys are the year of the archived element
+// and the values is the remarkdata for that year
 const groupByYear = array => {
-  const elementsByYear = array.reduce((elementsByYear, element) => {
+  return array.reduce((elementsByYear, element) => {
     // Extract year from date with regex (regex looks for last number in string)
     const year = `${element.frontmatter.date}`.match(/(\d+)(?!.*\d)/g)
     if (year != null) {
-      const content = (
-        <div
-          className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
-          key={element.id}
-        >
-          <EventCard
-            slug={element.fields.slug}
-            title={element.frontmatter.title}
-            date={element.frontmatter.date}
-            text={element.html}
-            image={element.frontmatter.image.childImageSharp.gatsbyImageData}
-          />
-        </div>
-      )
-      elementsByYear[year[0]] = (elementsByYear[year[0]] || []).concat(content)
+      elementsByYear[year[0]] = (elementsByYear[year[0]] || []).concat(element)
     }
     return elementsByYear
   }, {})
+}
 
-  // Now create rows sorted by year (descending) from the grouped array
+// Return archived EventCards sorted by year and filtered, if filter is set of course ;)
+const getCardsByYear = (elementsByYear, filterCategory) => {
+  // Sort by descending order
   const sortedYears = Object.keys(elementsByYear)
   sortedYears.sort()
   sortedYears.reverse()
 
-  const content = sortedYears.map(year => (
-    <div key={year}>
-      <h1 className="title is-medium mt-6">{year}</h1>
-      <hr className="has-background-grey"></hr>
-      <div className="columns">{elementsByYear[year]}</div>
-    </div>
-  ))
+  const cardsByYear = sortedYears.map(year => {
+    // Filter content
+    const filteredContent = filterCategory
+      ? elementsByYear[year].filter(element =>
+          element.frontmatter.category?.includes(filterCategory)
+        )
+      : elementsByYear[year]
 
-  return content
+    // Return EventCards or undefined if no content exists for this year
+    return filteredContent.length > 0 ? (
+      <>
+        <h1 className="title is-medium mt-6">{year}</h1>
+        <hr className="has-background-grey"></hr>
+
+        <div className="columns">
+          {filteredContent.map(element => (
+            <div
+              className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
+              key={element.id}
+            >
+              <EventCard
+                slug={element.fields.slug}
+                title={element.frontmatter.title}
+                date={element.frontmatter.date}
+                text={element.html}
+                category={element.frontmatter.category}
+                image={
+                  element.frontmatter.image?.childImageSharp.gatsbyImageData
+                }
+              />
+            </div>
+          ))}
+        </div>
+      </>
+    ) : undefined
+  })
+
+  // If there is no content for the filter category at all, return a message
+  return !cardsByYear.every(e => e == undefined) ? (
+    cardsByYear
+  ) : (
+    <p className="is-size-4">
+      Sorry, there is no archived content for this category yet.
+    </p>
+  )
 }
 
 const PastProjects = () => {
@@ -61,9 +89,10 @@ const PastProjects = () => {
           }
           frontmatter {
             title
-            date(formatString: "dddd, D MMMM yyyy")
+            date(formatString: "ddd DD MMM yy")
             time
             place
+            category
             image {
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, aspectRatio: 1)
@@ -75,15 +104,28 @@ const PastProjects = () => {
     }
   `)
 
+  const [filterCategory, setFilterCategory] = useState(undefined)
+
+  const selectCategory = useCallback(category => setFilterCategory(category), [
+    setFilterCategory,
+  ])
+  const elementsByYear = useMemo(
+    () => groupByYear(data.allMarkdownRemark.nodes),
+    [data]
+  )
+
   const content = !data.allMarkdownRemark ? (
     <h1 className="is-size-2">There are no entries to the archive yet.</h1>
   ) : (
-    <>{groupByYear(data.allMarkdownRemark.nodes)}</>
+    <>{getCardsByYear(elementsByYear, filterCategory)}</>
   )
 
   return (
     <ContentPage pageTitle="Archive">
-      <div className="container">{content}</div>
+      <div className="container">
+        <FilterBar callback={selectCategory} activeCategory={filterCategory} />
+        {content}
+      </div>
     </ContentPage>
   )
 }

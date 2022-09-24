@@ -1,8 +1,12 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+$family-serif: 'Montserrat', sans-serif;
+$family-primary: $family-serif;
+
 
 // Colour schemes
-$link: #5d246b;
+$link: #CD365D;
 $light: hsl(0, 0%, 96%);
 $dark: hsl(0, 0%, 21%);
 $white: #fff;
@@ -48,7 +52,7 @@ html {
         width: 100%; height:100%;
         top:0; left:0;
         background:#000;
-        opacity: 0.5;
+        opacity: 0.2;
     }
     .logo {
         max-width: 300px;

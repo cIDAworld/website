@@ -18,6 +18,7 @@ export default function Template({
         <EventPage
           title={frontmatter.title || "New Event"}
           date={frontmatter.date}
+          endDate={frontmatter.endDate}
           time={frontmatter.time}
           place={frontmatter.place}
           image={frontmatter.image?.childImageSharp.gatsbyImageData}
@@ -38,6 +39,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "dddd, D MMMM yyyy")
+        endDate(formatString: "dddd, D MMMM yyyy")
         time
         place
         image {

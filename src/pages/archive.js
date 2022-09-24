@@ -49,6 +49,7 @@ const getCardsByYear = (elementsByYear, filterCategory) => {
                 slug={element.fields.slug}
                 title={element.frontmatter.title}
                 date={element.frontmatter.date}
+                endDate={element.frontmatter.endDate}
                 text={element.html}
                 category={element.frontmatter.category}
                 image={
@@ -90,6 +91,7 @@ const PastProjects = () => {
           frontmatter {
             title
             date(formatString: "ddd DD MMM yy")
+            endDate(formatString: "ddd DD MMM yy")
             time
             place
             category

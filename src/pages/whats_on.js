@@ -31,6 +31,7 @@ const getEventCards = (markdown, filterCategory, selectCategory) => {
                     slug={element.fields.slug}
                     title={element.frontmatter.title}
                     date={element.frontmatter.date}
+                    endDate={element.frontmatter.endDate}
                     text={element.html}
                     category={element.frontmatter.category}
                     callback={selectCategory}
@@ -73,6 +74,7 @@ const WhatsOn = () => {
           frontmatter {
             title
             date(formatString: "ddd DD MMM yy")
+            endDate(formatString: "ddd DD MMM yy")
             time
             place
             category

@@ -1,6 +1,7 @@
 ---
 title: "International Conference in Ideology and Discourse Analysis 2019"
 date: "2019-05-31"
+endDate: "2019-06-01"
 place: "University of Essex"
 image: "./logics.png"
 category: ["conference","event"]

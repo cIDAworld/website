@@ -29,7 +29,7 @@ const Hero = props => {
   const landingHero = (
     <>
       <h1
-        className="title is-1 has-text-centered has-text-weight-bold has-text-light"
+        className="title is-1 is-size-2-mobile has-text-centered has-text-weight-bold has-text-light"
         dangerouslySetInnerHTML={{ __html: data.hero.html }}
       ></h1>
       <GatsbyImage
@@ -48,7 +48,7 @@ const Hero = props => {
 
   const smallHero = (
     <>
-      <h1 className="title is-1 has-text-centered has-text-weight-bold has-text-light">
+      <h1 className="title is-1 is-size-2-mobile has-text-centered has-text-weight-bold has-text-light">
         {props.title}
       </h1>
     </>
@@ -60,7 +60,7 @@ const Hero = props => {
         <NavBar title={props.title || "Home"}></NavBar>
       </div>
       <GatsbyImage
-        alt="Background image for Centre for Ideology and Discourse Analysis"
+        alt="An abstract stock painting that serves as the background image for the website"
         loading="eager"
         className="background"
         image={data.hero.frontmatter.image.childImageSharp.gatsbyImageData}

@@ -6,11 +6,6 @@
  * base64,aspectRatio,src,srcSet,srcSetType,sizes,originalImg,originalName,density,presentationWidth,presentationHeight,tracedSVG
  */
 
-const getFluidKeys = fluidResult => {
-  const keys = Object.keys(fluidResult)
-  return keys.toString()
-}
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })

@@ -62,8 +62,22 @@ const AboutContent = () => {
                 </span>
               </a>
 
-              <a href="#" className="button is-link is-large">
-                Master / PhD programmes
+              <a
+                href="https://www.essex.ac.uk/centres-and-institutes/ideology-and-discourse-analysis"
+                target="_blank"
+                className="button is-link is-large"
+              >
+                <span className="icon">
+                  <i className="fa fa-globe"></i>
+                </span>
+              </a>
+
+              <a
+                href="https://www.essex.ac.uk/courses/pr00914/1/phd-government"
+                target="_blank"
+                className="button is-link is-large"
+              >
+                PhD programme
               </a>
             </div>
           </div>

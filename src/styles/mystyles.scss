@@ -87,6 +87,11 @@ html {
     .navbar-item:hover {
         border: 2px solid $light;
     }
+    button {
+        border:none;
+        background-color: transparent;
+    }
+
 } 
 
 .footer {
@@ -141,7 +146,7 @@ html {
 }
 
 
-// Specify filter tab
+
 .tabs.is-toggle {
     overflow-x: visible;
     overflow: visible;

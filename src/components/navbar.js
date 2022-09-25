@@ -51,19 +51,18 @@ const NavBar = props => {
             loading="eager"
           />
         </Link>
-        <span
-          role="button"
+        <button
           className={`navbar-burger ${
             !mobileMenu ? "" : "is-active"
           } has-text-${navTransparent ? "light" : "dark"}`}
-          aria-label="menu"
+          aria-label="Open the menu"
           aria-expanded="false"
           onClick={() => setMobileMenu(!mobileMenu)}
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </span>
+        </button>
       </div>
       <div className={`navbar-menu ${!mobileMenu ? "" : "is-active"}`}>
         <div className="navbar-end">

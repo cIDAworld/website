@@ -148,6 +148,37 @@ html {
     ul {
         row-gap: 0.5rem;
     }
+    button {
+        font-size: inherit;
+        color: $tabs-link-color;
+        border-color: $tabs-toggle-link-border-color;
+        border-style: $tabs-toggle-link-border-style;
+        border-width: $tabs-toggle-link-border-width;
+        background-color: transparent;
+        margin-bottom: 0;
+        position: relative;
+        padding: 0.65em 1em; 
+    }
+    button:hover {
+        cursor: pointer;
+        background-color: $tabs-toggle-link-hover-background-color;
+        border-color: $tabs-toggle-link-hover-border-color;
+        z-index: 2; 
+    }
+    li:first-child button {
+        border-top-left-radius: $tabs-toggle-link-radius;
+        border-bottom-left-radius: $tabs-toggle-link-radius;
+    } 
+    li:last-child button{
+        border-top-right-radius: $tabs-toggle-link-radius;
+        border-bottom-right-radius: $tabs-toggle-link-radius;
+    } 
+
+    .is-active button  {
+        background-color: $link;
+        color: $light;
+        border-color: $link;
+    }
 }
 
 

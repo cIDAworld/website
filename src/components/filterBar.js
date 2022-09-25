@@ -35,9 +35,9 @@ const FilterBar = props => {
       <ul className="is-flex-shrink-1 is-flex-wrap-wrap">
         {uniqueCategories.map(e => (
           <li className={`${e === props.activeCategory ? "is-active" : ""}`}>
-            <a onClick={() => props.callback(e)}>
+            <button role="tab" onClick={() => props.callback(e)}>
               <span className="is-capitalized">{e || "All"}</span>
-            </a>
+            </button>
           </li>
         ))}
       </ul>

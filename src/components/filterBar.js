@@ -31,7 +31,7 @@ const FilterBar = props => {
 
   return (
     <div className="tabs is-toggle">
-      <ul>
+      <ul className="is-flex-shrink-1 is-flex-wrap-wrap">
         {uniqueCategories.map(e => (
           <li className={`${e == props.activeCategory ? "is-active" : ""}`}>
             <a onClick={() => props.callback(e)}>

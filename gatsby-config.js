@@ -2,6 +2,8 @@
  * Configure your Gatsby site with this file.
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
+ *
+ * base64,aspectRatio,src,srcSet,srcSetType,sizes,originalImg,originalName,density,presentationWidth,presentationHeight,tracedSVG
  */
 
 require("dotenv").config({
@@ -30,7 +32,13 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 1440,
+              maxWidth: 1000,
+              showCaptions: ["title", "alt"],
+              // Make sure that images are not too high
+              wrapperStyle: fluidResult =>
+                `max-width:${
+                  fluidResult.aspectRatio * 600
+                }px; margin: auto; text-align: center`,
             },
           },
           {

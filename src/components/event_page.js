@@ -1,16 +1,28 @@
 import React from "react"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
+const getDateJsx = (date, endDate) => {
+  if (date && endDate) {
+    return (
+      <>
+        <b>Date: </b>
+        from {date} to {endDate}
+        <br />
+      </>
+    )
+  } else if (date && !endDate) {
+    return (
+      <>
+        <b>Date: </b>
+        {date}
+        <br />
+      </>
+    )
+  } else return null
+}
+
 const EventPage = props => {
-  const date = props.date ? (
-    <>
-      <b>Date: </b>
-      {props.date}
-      <br />
-    </>
-  ) : (
-    ""
-  )
+  const date = getDateJsx(props.date, props.endDate)
 
   const time = props.time ? (
     <>

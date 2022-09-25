@@ -1,6 +1,6 @@
 import React from "react"
 
-import ContentPage from "../components/content_page"
+import ContentPage from "../components/contentPage"
 
 export default function Error404() {
   return (

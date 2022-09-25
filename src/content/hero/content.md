@@ -1,6 +1,6 @@
 ---
 title: Centre for Ideology and Discourse Analysis
-image: "./background4.jpg"
+image: "./background.jpg"
 ---
 
 Welcome to the Centre for Ideology and Discourse Analysis

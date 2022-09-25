@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 const Footer = () => {
@@ -24,6 +24,7 @@ const Footer = () => {
           <a
             href="https://www.essex.ac.uk/centres-and-institutes/ideology-and-discourse-analysis"
             target="_blank"
+            rel="noreferrer noopener"
           >
             <GatsbyImage
               className="logo"
@@ -64,7 +65,7 @@ const Footer = () => {
             <a
               href="http://www.sebastianlobbers.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
             >
               Sebastian L&ouml;bbers
             </a>

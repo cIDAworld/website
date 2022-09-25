@@ -1,8 +1,8 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import ContentPage from "../components/content_page"
-import MemberCard from "../components/member_card"
+import ContentPage from "../components/contentPage"
+import MemberCard from "../components/memberCard"
 
 const Members = () => {
   const data = useStaticQuery(graphql`

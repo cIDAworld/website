@@ -1,7 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import ContentPage from "../components/content_page"
-import EventPage from "../components/event_page"
+import { graphql } from "gatsby"
+import ContentPage from "../components/contentPage"
+import EventPage from "../components/eventPage"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.

@@ -1,5 +1,5 @@
 import React, { useMemo } from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 const FilterBar = props => {
   const data = useStaticQuery(graphql`
@@ -15,28 +15,32 @@ const FilterBar = props => {
     }
   `)
 
-  const uniqueCategories = useMemo(() => {
-    const uniqueCategories = []
-    data.allMarkdownRemark.nodes.map(element => {
-      const addCategories = element.frontmatter.category?.filter(
-        cat => !uniqueCategories.includes(cat)
-      )
-      if (addCategories) {
-        uniqueCategories.push(...addCategories)
-      }
-    })
-    uniqueCategories.unshift(undefined)
-    return uniqueCategories
-  }, [data])
+  const uniqueCategories = useMemo(
+    () =>
+      data.allMarkdownRemark.nodes.reduce(
+        (categories, e) => {
+          const newCategories = e.frontmatter.category?.filter(
+            cat => !categories.includes(cat)
+          )
+          if (newCategories) categories.push(...newCategories)
+          return categories
+        },
+        [undefined]
+      ),
+    [data]
+  )
 
   return (
     <div className="tabs is-toggle">
       <ul className="is-flex-shrink-1 is-flex-wrap-wrap">
         {uniqueCategories.map(e => (
-          <li className={`${e == props.activeCategory ? "is-active" : ""}`}>
-            <a onClick={() => props.callback(e)}>
+          <li
+            className={`${e === props.activeCategory ? "is-active" : ""}`}
+            key={`${e}-tab`}
+          >
+            <button role="tab" onClick={() => props.callback(e)}>
               <span className="is-capitalized">{e || "All"}</span>
-            </a>
+            </button>
           </li>
         ))}
       </ul>

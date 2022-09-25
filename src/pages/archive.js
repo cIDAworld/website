@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useCallback } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import ContentPage from "../components/content_page"
-import EventCard from "../components/event_card"
+import ContentPage from "../components/contentPage"
+import EventCard from "../components/eventCard"
 import FilterBar from "../components/filterBar"
 
 // Create an object where the keys are the year of the archived element
@@ -35,7 +35,7 @@ const getCardsByYear = (elementsByYear, filterCategory) => {
 
     // Return EventCards or undefined if no content exists for this year
     return filteredContent.length > 0 ? (
-      <>
+      <section key={`archive${year}`}>
         <h1 className="title is-medium mt-6">{year}</h1>
         <hr className="has-background-grey"></hr>
 
@@ -59,15 +59,15 @@ const getCardsByYear = (elementsByYear, filterCategory) => {
             </div>
           ))}
         </div>
-      </>
+      </section>
     ) : undefined
   })
 
   // If there is no content for the filter category at all, return a message
-  return !cardsByYear.every(e => e == undefined) ? (
+  return !cardsByYear.every(e => e === undefined) ? (
     cardsByYear
   ) : (
-    <p className="is-size-4">
+    <p className="is-size-6">
       Sorry, there is no archived content for this category yet.
     </p>
   )

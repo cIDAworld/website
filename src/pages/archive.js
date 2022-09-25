@@ -67,7 +67,7 @@ const getCardsByYear = (elementsByYear, filterCategory) => {
   return !cardsByYear.every(e => e === undefined) ? (
     cardsByYear
   ) : (
-    <p className="is-size-4">
+    <p className="is-size-6">
       Sorry, there is no archived content for this category yet.
     </p>
   )

@@ -44,7 +44,7 @@ const getEventCards = (markdown, filterCategory, selectCategory) => {
             })
           ) : (
             <div className="column is-full">
-              <p className="is-size-4">
+              <p className="is-size-6">
                 Sorry, there is no content in this category at the moment.
               </p>
             </div>

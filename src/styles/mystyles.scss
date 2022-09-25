@@ -1,14 +1,15 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-$family-serif: 'Montserrat', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+$family-serif: 'Lato', sans-serif;
 $family-primary: $family-serif;
 
 
 // Colour schemes
 $link: #CD365D;
 $light: hsl(0, 0%, 96%);
-$dark: hsl(0, 0%, 21%);
+$dark: hsl(0, 0%, 33%);
 $white: #fff;
 
 
@@ -20,6 +21,7 @@ $spacing-values: ("nav-bar": 100px);
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-size: 18px;
 }
 .has-no-bg-color {
     background-color: transparent !important;
@@ -35,6 +37,10 @@ html {
 
 .hero {
     position: relative;
+
+    h1 {
+        font-weight: 900;
+    }
 
     .background {
         position: absolute;
@@ -115,6 +121,7 @@ html {
 .section {
     p {
         padding-bottom: 1rem;
+        // font-size: 1.25rem;
     }
 }
 

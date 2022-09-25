@@ -151,7 +151,7 @@ const WhatsOn = () => {
                   author={element.retweeted_status?.user.name || "cIDA"}
                   date={new Date(element.created_at).toDateString()}
                   text={element.full_text}
-                  image={element.image.childImageSharp?.gatsbyImageData}
+                  image={element.image?.childImageSharp?.gatsbyImageData}
                   link={`https://www.twitter.com/cIDA_essex/status/${element.id_str}`}
                 />
               </div>

@@ -3,7 +3,6 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  *
- * base64,aspectRatio,src,srcSet,srcSetType,sizes,originalImg,originalName,density,presentationWidth,presentationHeight,tracedSVG
  */
 
 require("dotenv").config({

@@ -25,7 +25,6 @@ exports.onCreateNode = async ({
         category +
         "/" +
         path.basename(node.fileAbsolutePath, ".md").replace("_", "-"),
-      sortYear: node.frontmatter.year || "1970",
     }
 
     if (category === "projects") {
@@ -48,8 +47,9 @@ exports.onCreateNode = async ({
     createNodeField({ node, name: "date", value: date.toISOString() })
 
     const image_url =
-      node?.retweeted_status?.user?.profile_banner_url ||
-      "https://pbs.twimg.com/profile_banners/926622800873484289/1516727915/1500x500"
+      node.retweeted_status?.user?.profile_banner_url ||
+      node.user.profile_banner_url
+
     if (image_url) {
       await createRemoteFileNode({
         url: image_url,

@@ -3,7 +3,6 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  *
- * base64,aspectRatio,src,srcSet,srcSetType,sizes,originalImg,originalName,density,presentationWidth,presentationHeight,tracedSVG
  */
 
 require("dotenv").config({
@@ -17,7 +16,6 @@ module.exports = {
   /* Your site config here */
   pathPrefix: "",
   plugins: [
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
       options: {

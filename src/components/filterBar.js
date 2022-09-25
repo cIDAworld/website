@@ -15,19 +15,20 @@ const FilterBar = props => {
     }
   `)
 
-  const uniqueCategories = useMemo(() => {
-    const uniqueCategories = []
-    data.allMarkdownRemark.nodes.map(element => {
-      const addCategories = element.frontmatter.category?.filter(
-        cat => !uniqueCategories.includes(cat)
-      )
-      if (addCategories) {
-        uniqueCategories.push(...addCategories)
-      }
-    })
-    uniqueCategories.unshift(undefined)
-    return uniqueCategories
-  }, [data])
+  const uniqueCategories = useMemo(
+    () =>
+      data.allMarkdownRemark.nodes.reduce(
+        (categories, e) => {
+          const newCategories = e.frontmatter.category?.filter(
+            cat => !categories.includes(cat)
+          )
+          if (newCategories) categories.push(...newCategories)
+          return categories
+        },
+        [undefined]
+      ),
+    [data]
+  )
 
   return (
     <div className="tabs is-toggle">

@@ -35,7 +35,7 @@ const getCardsByYear = (elementsByYear, filterCategory) => {
 
     // Return EventCards or undefined if no content exists for this year
     return filteredContent.length > 0 ? (
-      <>
+      <section key={`archive${year}`}>
         <h1 className="title is-medium mt-6">{year}</h1>
         <hr className="has-background-grey"></hr>
 
@@ -59,7 +59,7 @@ const getCardsByYear = (elementsByYear, filterCategory) => {
             </div>
           ))}
         </div>
-      </>
+      </section>
     ) : undefined
   })
 

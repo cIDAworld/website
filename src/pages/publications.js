@@ -5,7 +5,7 @@ import ContentPage from "../components/contentPage"
 
 const groupByYear = array =>
   array.map(element => (
-    <div key={element.id}>
+    <section key={element.id}>
       <h1 className="title is-medium mt-6">{element.frontmatter.year}</h1>
       <hr className="has-background-grey"></hr>
       <div className="columns">
@@ -16,7 +16,7 @@ const groupByYear = array =>
           ></p>
         </div>
       </div>
-    </div>
+    </section>
   ))
 
 const Publications = () => {

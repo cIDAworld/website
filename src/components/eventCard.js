@@ -4,7 +4,10 @@ import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 const EventCard = props => {
   return (
-    <div className="card is-flex is-flex-direction-column is-flex-grow-1">
+    <div
+      className="card is-flex is-flex-direction-column is-flex-grow-1"
+      key={props.slug}
+    >
       <Link to={`${props.slug}/#header`}>
         <div className="card-image">
           <figure className="image">
@@ -19,7 +22,12 @@ const EventCard = props => {
           </figure>
           <div className="tags is-overlay is-align-items-start is-justify-content-left p-3">
             {props.category?.map(e => (
-              <span className="tag is-capitalized is-white">{e}</span>
+              <span
+                key={`${e}-category`}
+                className="tag is-capitalized is-white"
+              >
+                {e}
+              </span>
             ))}
           </div>
         </div>

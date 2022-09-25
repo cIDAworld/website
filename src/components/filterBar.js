@@ -34,7 +34,10 @@ const FilterBar = props => {
     <div className="tabs is-toggle">
       <ul className="is-flex-shrink-1 is-flex-wrap-wrap">
         {uniqueCategories.map(e => (
-          <li className={`${e === props.activeCategory ? "is-active" : ""}`}>
+          <li
+            className={`${e === props.activeCategory ? "is-active" : ""}`}
+            key={`${e}-tab`}
+          >
             <button role="tab" onClick={() => props.callback(e)}>
               <span className="is-capitalized">{e || "All"}</span>
             </button>

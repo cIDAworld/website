@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import ContentPage from "../components/content_page"
+import ContentPage from "../components/contentPage"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 export default function Template({

@@ -1,5 +1,5 @@
 import React from "react"
-import ContentPage from "../components/content_page"
+import ContentPage from "../components/contentPage"
 import AboutContent from "./aboutContent"
 
 const About = () => {

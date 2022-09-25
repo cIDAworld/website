@@ -6,7 +6,7 @@ const AboutContent = () => {
   const links = ["staff", "sponsors", "facilities"]
   const data = useStaticQuery(graphql`
     {
-      about: markdownRemark(fields: { category: { eq: "home" } }) {
+      about: markdownRemark(fields: { category: { eq: "about" } }) {
         html
         frontmatter {
           title

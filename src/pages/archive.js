@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useCallback } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import ContentPage from "../components/content_page"
-import EventCard from "../components/event_card"
+import ContentPage from "../components/contentPage"
+import EventCard from "../components/eventCard"
 import FilterBar from "../components/filterBar"
 
 // Create an object where the keys are the year of the archived element

@@ -1,10 +1,10 @@
 import React, { useCallback, useMemo, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import ContentPage from "../components/content_page"
-import EventPage from "../components/event_page"
-import EventCard from "../components/event_card"
-import TwitterCard from "../components/twitter_card"
+import ContentPage from "../components/contentPage"
+import EventPage from "../components/eventPage"
+import EventCard from "../components/eventCard"
+import TwitterCard from "../components/twitterCard"
 import FilterBar from "../components/filterBar"
 
 const getEventCards = (markdown, filterCategory, selectCategory) => {

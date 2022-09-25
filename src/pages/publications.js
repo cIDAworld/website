@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import ContentPage from "../components/content_page"
+import ContentPage from "../components/contentPage"
 
 const groupByYear = array =>
   array.map(element => (

@@ -7,7 +7,7 @@ const NavBar = props => {
   const [mobileMenu, setMobileMenu] = useState(false)
   const [navItems, setNavItems] = useState([
     { name: "About", link: "/about" },
-    { name: "What's on", link: "/whats_on" },
+    { name: "What's on", link: "/whatson" },
     { name: "Archive", link: "/archive" },
     { name: "Publications", link: "/publications" },
     { name: "Members", link: "/members" },

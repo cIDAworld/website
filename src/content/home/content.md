@@ -1,6 +1,6 @@
 ---
 title: About 
-image: "./cida_red_logo.png"
+image: "../logos/cida_red_logo.png"
 ---
 
 **The Centre for Ideology and Discourse Analysis is a meeting place for students and scholars interested in post-structuralist and post-Marxist political theory, psychoanalysis, and the broad research program known as the Essex School of Discourse Analysis.** 

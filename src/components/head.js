@@ -12,9 +12,6 @@ const Head = props => {
       <meta name="description" content="" />
       <meta name="keywords" content="" />
       <title>{`cIDA | ${title}`}</title>
-      {props.redirect && (
-        <meta http-equiv="refresh" content={`0;URL='${props.redirect}'`} />
-      )}
     </>
   )
 }

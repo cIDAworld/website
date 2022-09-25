@@ -64,7 +64,7 @@ const getCardsByYear = (elementsByYear, filterCategory) => {
   })
 
   // If there is no content for the filter category at all, return a message
-  return !cardsByYear.every(e => e == undefined) ? (
+  return !cardsByYear.every(e => e === undefined) ? (
     cardsByYear
   ) : (
     <p className="is-size-4">

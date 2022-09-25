@@ -1,5 +1,5 @@
 import React, { useMemo } from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 const FilterBar = props => {
   const data = useStaticQuery(graphql`
@@ -33,7 +33,7 @@ const FilterBar = props => {
     <div className="tabs is-toggle">
       <ul className="is-flex-shrink-1 is-flex-wrap-wrap">
         {uniqueCategories.map(e => (
-          <li className={`${e == props.activeCategory ? "is-active" : ""}`}>
+          <li className={`${e === props.activeCategory ? "is-active" : ""}`}>
             <a onClick={() => props.callback(e)}>
               <span className="is-capitalized">{e || "All"}</span>
             </a>

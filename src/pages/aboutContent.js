@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 const AboutContent = () => {
-  const links = ["staff", "sponsors", "facilities"]
   const data = useStaticQuery(graphql`
     {
       about: markdownRemark(fields: { category: { eq: "about" } }) {
@@ -37,6 +36,7 @@ const AboutContent = () => {
               <a
                 href="https://twitter.com/cida_essex?lang=en"
                 target="_blank"
+                rel="noreferrer noopener"
                 className="button is-link is-large"
               >
                 <span className="icon">
@@ -46,6 +46,7 @@ const AboutContent = () => {
               <a
                 href="https://www.facebook.com/cIDA.essex/"
                 target="_blank"
+                rel="noreferrer noopener"
                 className="button is-link is-large"
               >
                 <span className="icon">
@@ -55,6 +56,7 @@ const AboutContent = () => {
               <a
                 href="https://www.youtube.com/channel/UCwemasspu9Mr4TuMR4Fj4uA"
                 target="_blank"
+                rel="noreferrer noopener"
                 className="button is-link is-large"
               >
                 <span className="icon">
@@ -65,6 +67,7 @@ const AboutContent = () => {
               <a
                 href="https://www.essex.ac.uk/centres-and-institutes/ideology-and-discourse-analysis"
                 target="_blank"
+                rel="noreferrer noopener"
                 className="button is-link is-large"
               >
                 <span className="icon">
@@ -75,6 +78,7 @@ const AboutContent = () => {
               <a
                 href="https://www.essex.ac.uk/courses/pr00914/1/phd-government"
                 target="_blank"
+                rel="noreferrer noopener"
                 className="button is-link is-large"
               >
                 PhD programme

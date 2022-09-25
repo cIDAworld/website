@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
+// Names of navbar elements and links to pages
+const navItems = [
+  { name: "About", link: "/about" },
+  { name: "What's on", link: "/whatson" },
+  { name: "Archive", link: "/archive" },
+  { name: "Publications", link: "/publications" },
+  { name: "Members", link: "/members" },
+]
+
 const NavBar = props => {
   const [navTransparent, setNavTransparent] = useState(true)
   const [mobileMenu, setMobileMenu] = useState(false)
-  const [navItems, setNavItems] = useState([
-    { name: "About", link: "/about" },
-    { name: "What's on", link: "/whatson" },
-    { name: "Archive", link: "/archive" },
-    { name: "Publications", link: "/publications" },
-    { name: "Members", link: "/members" },
-  ])
 
   const changeTransparency = () => {
     const y = window.pageYOffset
@@ -49,7 +51,7 @@ const NavBar = props => {
             loading="eager"
           />
         </Link>
-        <a
+        <span
           role="button"
           className={`navbar-burger ${
             !mobileMenu ? "" : "is-active"
@@ -61,7 +63,7 @@ const NavBar = props => {
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </span>
       </div>
       <div className={`navbar-menu ${!mobileMenu ? "" : "is-active"}`}>
         <div className="navbar-end">

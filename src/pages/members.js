@@ -22,7 +22,11 @@ const Members = () => {
             intro
             image {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, aspectRatio: 1.0)
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  aspectRatio: 1.0
+                  width: 350
+                )
               }
             }
           }

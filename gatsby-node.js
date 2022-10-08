@@ -43,15 +43,14 @@ exports.onCreateNode = async ({
   }
 
   if (node.internal.type === "twitterStatusesUserTimelineTimeline") {
-    const date = new Date(node.created_at)
-    createNodeField({ node, name: "date", value: date.toISOString() })
-
     const image_url =
       node.retweeted_status?.user?.profile_banner_url ||
       node.user.profile_banner_url
 
-    if (image_url) {
-      await createRemoteFileNode({
+    let imageNode
+
+    try {
+      imageNode = await createRemoteFileNode({
         url: image_url,
         parentNodeId: node.id,
         store,
@@ -59,13 +58,18 @@ exports.onCreateNode = async ({
         createNode,
         createNodeId,
       })
-        .then(fileNode => {
-          node.image___NODE = fileNode.id
-        })
-        .catch(x => {
-          console.warn("Fail to fetch twitter profile image:", x)
-        })
+    } catch (e) {
+      console.warn("Fail to fetch twitter profile image:", e)
     }
+
+    if (imageNode) {
+      node.image___NODE = imageNode.id
+    }
+
+    // It appears that this code has to come after the image node creation for images to be created properly
+    // I'm not sure why though`
+    const date = new Date(node.created_at)
+    createNodeField({ node, name: "date", value: date.toISOString() })
   }
 }
 

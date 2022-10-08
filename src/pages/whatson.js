@@ -95,6 +95,7 @@ const WhatsOn = () => {
           full_text
           created_at
           id_str
+
           image {
             childImageSharp {
               gatsbyImageData(height: 200, width: 600)
@@ -113,9 +114,10 @@ const WhatsOn = () => {
 
   const [filterCategory, setFilterCategory] = useState(undefined)
 
-  const selectCategory = useCallback(category => setFilterCategory(category), [
-    setFilterCategory,
-  ])
+  const selectCategory = useCallback(
+    category => setFilterCategory(category),
+    [setFilterCategory]
+  )
 
   const highlightPage = useMemo(() => {
     /* markdown remark is sorted first by highlight flag and then by date,

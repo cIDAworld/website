@@ -22,6 +22,7 @@ export default function Template({
           time={frontmatter.time}
           place={frontmatter.place}
           image={frontmatter.image?.childImageSharp.gatsbyImageData}
+          pdfURL={frontmatter.pdf?.publicURL}
           text={html}
         />
       </div>
@@ -30,7 +31,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       fields {
@@ -42,6 +43,9 @@ export const pageQuery = graphql`
         endDate(formatString: "dddd, D MMMM yyyy")
         time
         place
+        pdf {
+          publicURL
+        }
         image {
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED, aspectRatio: 1.0)

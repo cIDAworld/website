@@ -23,6 +23,32 @@ html {
     scroll-behavior: smooth;
     font-size: 18px;
 }
+
+// About section
+.only-show-first-paragraph {
+    p {
+        display: none;
+    }
+    p:first-child {
+        display: block;
+    }
+}
+
+button.looks-like-link {
+    color: $link;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+button.looks-like-link:hover {
+    cursor: pointer;
+}
+
+
+
 .has-no-bg-color {
     background-color: transparent !important;
 }
@@ -185,6 +211,7 @@ html {
         border-color: $link;
     }
 }
+
 
 
 

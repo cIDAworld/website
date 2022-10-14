@@ -5,6 +5,8 @@ endDate: "2019-06-01"
 place: "University of Essex"
 image: "./logics.png"
 category: ["conference","event"]
+time: ""
+highlight: false
 ---
 
 *Logics, Critical Explanation and the Future of Critical Political Theory: Applying Discourse Analysis in Multiple Contexts*

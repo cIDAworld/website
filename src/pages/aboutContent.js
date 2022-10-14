@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -18,6 +18,8 @@ const AboutContent = () => {
       }
     }
   `)
+
+  const [showParagraph, setShowParagraph] = useState(false)
   return (
     <>
       <div className="container">
@@ -31,8 +33,20 @@ const AboutContent = () => {
             />
           </div>
           <div className="column is-two-thirds text-content">
-            <div dangerouslySetInnerHTML={{ __html: data.about.html }}></div>
-            <div className="buttons">
+            <div
+              className={
+                showParagraph ? undefined : "only-show-first-paragraph"
+              }
+              dangerouslySetInnerHTML={{ __html: data.about.html }}
+            ></div>
+            <button
+              className="looks-like-link"
+              onClick={() => setShowParagraph(!showParagraph)}
+            >
+              {showParagraph ? "Show less" : "Read more"}
+            </button>
+
+            <div className="buttons mt-6">
               <a
                 href="https://twitter.com/cida_essex?lang=en"
                 target="_blank"

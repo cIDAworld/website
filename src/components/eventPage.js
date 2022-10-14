@@ -30,18 +30,21 @@ const EventPage = props => {
       {props.time}h
       <br />
     </>
-  ) : (
-    ""
-  )
+  ) : undefined
 
   const where = props.place ? (
     <>
       <b>Where: </b>
       {props.place} <br />
     </>
-  ) : (
-    ""
-  )
+  ) : undefined
+
+  const pdf = props.pdfURL ? (
+    <a href={props.pdfURL} target="_blank" rel="noopener noreferrer">
+      Download pdf
+    </a>
+  ) : undefined
+
   return (
     <>
       <div className="columns">
@@ -67,6 +70,7 @@ const EventPage = props => {
         </div>
         <div className="column is-two-thirds text-content">
           <div dangerouslySetInnerHTML={{ __html: props.text }}></div>
+          {pdf}
         </div>
       </div>
     </>

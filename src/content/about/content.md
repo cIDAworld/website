@@ -1,6 +1,10 @@
 ---
 title: About 
 image: "../logos/cida_red_logo.png"
+centre_logos:
+- logo: "./desire-horizontal.png"
+  logo_alt: "Desire logo"
+  link: "https://www.researchcenterdesire.eu/" 
 ---
 
 The Centre for Ideology and Discourse Analysis is a meeting place for students and scholars interested in post-structuralist and post-Marxist political theory, psychoanalysis, and the broad research program known as the Essex School of Discourse Analysis. It is organized by the Ideology and Discourse PhD program and draws its membership from a range of schools and departments across the University. Students, faculty, and affiliates convene at the Centre to discuss questions related to the role of discourse in politics and society; the lineage of Marxism in political theory; the impact of psychoanalytic understandings of emotion on the concept of ideology; and the nature and dynamics of capitalism in social, political, and economic life. The Centre connects research with political theory and practice by actively involving its members in research projects, hosting seminars, academic visits and working with other institutions in the UK and Europe.

@@ -14,6 +14,16 @@ const AboutContent = () => {
               gatsbyImageData(layout: CONSTRAINED)
             }
           }
+          centre_logos {
+            logo {
+              id
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED, width: 200)
+              }
+            }
+            link
+            logo_alt
+          }
         }
       }
     }
@@ -106,6 +116,16 @@ const AboutContent = () => {
           <h1 className="is-size-2 has-text-weight-semibold">
             Associated Centres
           </h1>
+        </div>
+        <div className="columns is-justify-content-space-around is-flex is-full mt-3">
+          {data.about.frontmatter.centre_logos.map(logoData => (
+            <a href={logoData.link} target="_blank" rel="noreferrer noopener">
+              <GatsbyImage
+                alt={logoData.logo_alt}
+                image={logoData.logo.childImageSharp.gatsbyImageData}
+              />
+            </a>
+          ))}
         </div>
       </div>
     </>

@@ -49,7 +49,7 @@ const Footer = () => {
           <p>Tel: +44 (0) 1206 873333</p>
           <p>
             Email: &nbsp;
-            <a href="mailto:enquiries@essex.ac.uk">enquiries@essex.ac.uk</a>
+            <a href="mailto:cida@essex.ac.uk">cida@essex.ac.uk</a>
           </p>
         </div>
         <div id="footer-uni-logo">

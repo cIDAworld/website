@@ -1,4 +1,4 @@
-name: Build GH Pages
+name: Schedule commit to rebuild page on gatsby cloud
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -24,7 +24,7 @@ jobs:
       # Runs commands using the runners shell
       - name: Run the python script
         run: |
-          cd workflows
+          cd log
           python update_log.py
           cd ../
       - name: Commit files # transfer the new html files back into the repository

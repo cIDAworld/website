@@ -39,7 +39,7 @@ const EventCard = props => {
                 {props.date || null}
                 {props.endDate ? ` - ${props.endDate}` : null}
               </p>
-              <p className="title is-4">{props.title || "New Event"} </p>
+              <p className="title is-6">{props.title || "New Event"} </p>
             </div>
           </div>
           <div className="content"></div>

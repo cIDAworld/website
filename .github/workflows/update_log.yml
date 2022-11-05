@@ -5,7 +5,7 @@ name: Schedule commit to rebuild page on gatsby cloud
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron: "33 17 * * *"
+    - cron: '40 17 * * *''
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

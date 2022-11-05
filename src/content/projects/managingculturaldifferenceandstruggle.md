@@ -8,7 +8,7 @@ category: ["working paper series"]
 time: ""
 highlight: false
 image: "./managingculturaldifferenceandstruggle.png"
-pdf: "./Dean (2008)The Lady Doth Protest too much.pdf"
+pdf: "./Angouri & Glynos (2009) Managing Cultural Difference and Struggle in the context of the Multinational Corporate Workplace - Solution or Symptom.pdf"
 ---
 
 **Abstract**

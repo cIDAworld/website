@@ -3,9 +3,7 @@ title: "Managing Cultural Difference and Struggle in the context of the Multinat
 Solution or Symptom?"
 date: "2009-12-01"
 expireDate: "2009-12-20"
-place: ""
 category: ["working paper series"]
-time: ""
 highlight: false
 image: "./managingculturaldifferenceandstruggle.png"
 pdf: "./Angouri & Glynos (2009) Managing Cultural Difference and Struggle in the context of the Multinational Corporate Workplace - Solution or Symptom.pdf"

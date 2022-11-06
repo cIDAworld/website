@@ -4,7 +4,6 @@ date: "2021-11-12"
 place: "Online"
 image: "./political_semiotics.jpeg" 
 category: ["speaker series"]
-time: ""
 highlight: false
 ---
 

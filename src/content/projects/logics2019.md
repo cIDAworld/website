@@ -5,7 +5,6 @@ endDate: "2019-06-01"
 place: "University of Essex"
 image: "./logics.png"
 category: ["conference","event"]
-time: ""
 highlight: false
 ---
 

@@ -2,9 +2,7 @@
 title: "The lady doth protest too much"
 date: "2008-07-01"
 expireDate: "2008-08-01"
-place: ""
 category: ["working paper series"]
-time: ""
 highlight: false
 image: "./theladydothprotesttoomuch.png"
 pdf: "./Dean (2008)The Lady Doth Protest too much.pdf"

@@ -2,9 +2,7 @@
 title: "Pluralizing Methods: Contingency, Ethics, and Critical Explanation"
 date: "2008-07-01"
 expireDate: "2008-08-01"
-place: ""
 category: ["working paper series"]
-time: ""
 highlight: false
 image: "./pluralizingmethods.png"
 pdf: "./Howarth (2008) Pluralizing Methods.pdf"

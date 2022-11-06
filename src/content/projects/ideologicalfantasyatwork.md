@@ -2,9 +2,7 @@
 title: "Ideological Fantasy at work"
 date: "2008-07-01"
 expireDate: "2008-08-01"
-place: ""
 category: ["working paper series"]
-time: ""
 highlight: false
 image: "./ideologicalfantasyatwork.png"
 pdf: "./Glynos (2008) Ideological Fantasy at Work.pdf"

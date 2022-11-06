@@ -3,9 +3,7 @@ title: "Interdisciplinarity and ‘Field Research’ Methods in Discourse Studie
 Political Discourse Theory, Cultural Critique and the ‘Gift’ of an Ethnographic Ethos"
 date: "2012-05-01"
 expireDate: "2012-06-01"
-place: ""
 category: ["working paper series"]
-time: ""
 highlight: false
 image: "./discoursetheoryandethnography.png"
 pdf: "./Karakatsanis (2012) Discourse Theory & Ethnography.pdf"

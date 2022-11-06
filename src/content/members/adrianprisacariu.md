@@ -2,7 +2,6 @@
 name: "Adrian Prisacariu"
 role: "PhD Student"
 image: "./Adrian Prisacariu.jpg"
-intro: ""
 twitter: "@AdrianP30402839"
 website: "https://www.linkedin.com/in/adrian-prisacariu-8b3058245"
 ---

@@ -14,6 +14,7 @@ pdf: ""
 The Centre for Ideology and Discourse Analysis in the Department of Government at the University of Essex invites you to attend a presentation by Camila Vergara
 
 On the Chilean Social Unrest – A Laclauian Analysis
+
 Discussant: Cristobal Sandoval (Universidad Diego Portales)
 
 This presentation will link the Chilean unrest of October 18th, 2019, to the discussion of important
@@ -24,11 +25,15 @@ set of unsatisfied citizen demands and that allows them to be translated into co
 policies or an alternative political project.
 
 Date: 18th November 2022
+
 Time: 4.30 - 6pm UTC
 
 Introduction: 5-10 min
+
 Presentation: 30-35 min
+
 Discussion: 15-20 min
+
 Q&A: 20-25 min
 
 The on-campus location is: [NTC.1.02](http://findyourway.essex.ac.uk/?mapProject=essexc&room=NTC.1.02&st_elev_gr=stairs)

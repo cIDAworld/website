@@ -38,9 +38,6 @@ Q&A: 20-25 min
 
 The on-campus location is: [NTC.1.02](http://findyourway.essex.ac.uk/?mapProject=essexc&room=NTC.1.02&st_elev_gr=stairs)
 
-The online location is: [Zoom Meeting](https://essex-university.zoom.us/j/99804356057)
-(or paste 99804356057 into your Zoom client)
-
 Dr. Camila Vergara is a critical legal theorist, historian, and journalist from Chile writing on the relation between inequality, corruption, and domination, and how to institutionally empower common people to resist oppression from the powerful few. Currently, she is a Marie Skłodowska-Curie Fellow at the University of Cambridge conducting research on plebeian constitutional rights. Vergara has published academic articles on corruption and populism in peer-reviewed journals as well as contributed opinion pieces on neoliberalism and the popular uprising in Chile for Jacobin Magazine and Sidecar—New Left Review. She holds a PhD in Political Theory with specialization in Constitutional Law from Columbia University, and has taught political theory courses at New York University, Columbia University and Universidad Diego Portales. Currently she teaches an open-access class in the Escuela Popular Constituyente on Youtube to guide Chileans during the ongoing constitutional process.
 
 Dr Vergara has recommended some background reading for the session if anyone wishes to explore these issues in more depth. If you are interested, please contact cida@essex.ac.uk.

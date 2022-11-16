@@ -32,6 +32,7 @@ Discussion: 15-20 min
 Q&A: 20-25 min
 
 The on-campus location is: [NTC.1.02](http://findyourway.essex.ac.uk/?mapProject=essexc&room=NTC.1.02&st_elev_gr=stairs)
+
 The online location is: [Zoom Meeting](https://essex-university.zoom.us/j/99804356057)
 (or paste 99804356057 into your Zoom client)
 

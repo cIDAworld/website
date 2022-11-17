@@ -8,7 +8,6 @@ time: "4.30-6pm UTC"
 category: ["event"]
 highlight: false
 image: "![](path to image "cida_red_logo_with_title.jpg")"
-pdf: ""
 ---
 
 The Centre for Ideology and Discourse Analysis in the Department of Government at the University of Essex invites you to attend a presentation by Camila Vergara
@@ -28,18 +27,4 @@ Date: 18th November 2022
 
 Time: 4.30 - 6pm UTC
 
-Introduction: 5-10 min
-
-Presentation: 30-35 min
-
-Discussion: 15-20 min
-
-Q&A: 20-25 min
-
-The on-campus location is: [NTC.1.02](http://findyourway.essex.ac.uk/?mapProject=essexc&room=NTC.1.02&st_elev_gr=stairs)
-
 Dr. Camila Vergara is a critical legal theorist, historian, and journalist from Chile writing on the relation between inequality, corruption, and domination, and how to institutionally empower common people to resist oppression from the powerful few. Currently, she is a Marie Skłodowska-Curie Fellow at the University of Cambridge conducting research on plebeian constitutional rights. Vergara has published academic articles on corruption and populism in peer-reviewed journals as well as contributed opinion pieces on neoliberalism and the popular uprising in Chile for Jacobin Magazine and Sidecar—New Left Review. She holds a PhD in Political Theory with specialization in Constitutional Law from Columbia University, and has taught political theory courses at New York University, Columbia University and Universidad Diego Portales. Currently she teaches an open-access class in the Escuela Popular Constituyente on Youtube to guide Chileans during the ongoing constitutional process.
-
-Dr Vergara has recommended some background reading for the session if anyone wishes to explore these issues in more depth. If you are interested and would like to ask for the Zoom link for attending the event online, please contact cida@essex.ac.uk.
-
-cIDA seminars host speakers from different disciplinary backgrounds, seeking to offer a forum in which to discuss and engage with current theoretical and political debates.

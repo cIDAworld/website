@@ -7,7 +7,7 @@ place: "NTC.1.02, University of Essex"
 time: "4.30-6pm UTC"
 category: ["event"]
 highlight: false
-image: "./cida_red_logo_with_title.jpg"
+image: "./CIDA_Logo_Small.png"
 ---
 
 The Centre for Ideology and Discourse Analysis in the Department of Government at the University of Essex invites you to attend a presentation by Camila Vergara

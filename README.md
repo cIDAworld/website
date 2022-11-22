@@ -146,6 +146,9 @@ Let's break down these tags:
 - **image:** this is the image shown on the cards in What's On and Archive and also on the individual content pages. After uploading an image, enter the image name including extensions (e.g. `.jpg`,`.jpeg` or `.png`) preceded by `./`. The tag for a png image with the name *test* would look like this `image: "./test.png"`. Ideally, you should always include an image to make the website more vibrant. If you don't include the image tag, [this default image](static/defaultevent.png) will be shown.
 - **pdf:** sometimes you might want to include a pdf document in your content, for example when create a post about the working paper series. You can upload a pdf and include it in the pdf tag the same way as an image. The tag for a pdf with the name *test* would look like this `pdf: "./test.pdf"`. **Delete this tag if you don't need it.**
 
+**DON'T SET endDate OR expireDate TO THE SAME VALUE AS date IT WILL PREVENT THE PAGE FROM FUNCTIONING CORRECTLY. IF ALL OF THESE DATES ARE THE SAME, DELETE endDate AND expireDATE AND ONLY KEEP date!** 
+
+
 
 ## Members
 

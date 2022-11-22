@@ -1,8 +1,6 @@
 ---
 title: "On the Chilean Social Unrest – A Laclauian Analysis by Camila Vergara"
 date: "2022-11-18"
-endDate: "2022-11-18"
-expireDate: "2022-11-18"
 place: "NTC.1.02, University of Essex"
 time: "4.30-6pm UTC"
 category: ["event"]

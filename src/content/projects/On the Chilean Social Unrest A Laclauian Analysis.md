@@ -8,7 +8,7 @@ highlight: false
 image: "./CIDA_Logo_Small.png"
 ---
 
-'https://www.youtube.com/watch?v=6mR-qtwPvvc'
+`youtube: https://www.youtube.com/watch?v=pjwKuhprZVo`
 
 The Centre for Ideology and Discourse Analysis in the Department of Government at the University of Essex invites you to attend a presentation by Camila Vergara
 

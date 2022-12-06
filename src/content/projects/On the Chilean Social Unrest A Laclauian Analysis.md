@@ -5,7 +5,7 @@ place: "NTC.1.02, University of Essex"
 time: "4.30-6pm UTC"
 category: ["event"]
 highlight: false
-image: "./CIDA_Logo_Small.png"
+image: "./onthechileansocialunrest.png"
 ---
 
 `youtube: https://www.youtube.com/watch?v=6mR-qtwPvvc`

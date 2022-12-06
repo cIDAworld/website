@@ -26,3 +26,5 @@ Date: 18th November 2022
 Time: 4.30 - 6pm UTC
 
 Dr. Camila Vergara is a critical legal theorist, historian, and journalist from Chile writing on the relation between inequality, corruption, and domination, and how to institutionally empower common people to resist oppression from the powerful few. Currently, she is a Marie Skłodowska-Curie Fellow at the University of Cambridge conducting research on plebeian constitutional rights. Vergara has published academic articles on corruption and populism in peer-reviewed journals as well as contributed opinion pieces on neoliberalism and the popular uprising in Chile for Jacobin Magazine and Sidecar—New Left Review. She holds a PhD in Political Theory with specialization in Constitutional Law from Columbia University, and has taught political theory courses at New York University, Columbia University and Universidad Diego Portales. Currently she teaches an open-access class in the Escuela Popular Constituyente on Youtube to guide Chileans during the ongoing constitutional process.
+
+https://www.youtube.com/watch?v=6mR-qtwPvvc 

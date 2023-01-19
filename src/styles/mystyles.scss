@@ -24,6 +24,11 @@ html {
     font-size: 18px;
 }
 
+// List style in sections
+section ul {
+    list-style: inside; 
+}
+
 // About section
 .only-show-first-paragraph {
     p {

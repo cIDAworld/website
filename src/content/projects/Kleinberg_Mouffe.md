@@ -44,9 +44,9 @@ References:
  - Viroli, Maurizio. 1995. *For Love of Country: An Essay On Patriotism and Nationalism*. Oxford: Clarendon Press.
  - Xenos, Nicholas. 1996. “Statelessness: The Making and Unmaking of Political Identity.” *The European Legacy* 1 (2): 820–25. [https://doi.org/10.1080/10848779608579488](https://doi.org/10.1080/10848779608579488).
  - Yack, Bernard. 1996. “The Myth of the Civic Nation.” *Critical Review* 10 (2): 193–211. [https://doi.org/10.1080/08913819608443417](https://doi.org/10.1080/08913819608443417).
- - Zernatto, Guido, and Alfonso G. Mistretta. 1944. “Nation: The History of a Word.” *The Review of Politics* 6 (3): 351–66.<br>
+ - Zernatto, Guido, and Alfonso G. Mistretta. 1944. “Nation: The History of a Word.” *The Review of Politics* 6 (3): 351–66.
 
-
+<br>
 Reid A. Kleinberg.<br>
 PhD Candidate, University of Essex.<br>
 Rk19251@essex.ac.uk

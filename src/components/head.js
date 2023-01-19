@@ -7,7 +7,7 @@ const Head = props => {
     <>
       <meta charSet="UTF-8" />
       <meta name="HandheldFriendly" content="True" />
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content="The official website for the Centre for Ideology and Discourse Analysis at the University of Essex." />
       <meta name="keywords" content="cida, university of essex, academic, phd, research" />

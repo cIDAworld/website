@@ -1,7 +1,7 @@
 ---
 name: "Anne Steinhoff"
 role: "Lecturer in Accounting"
-image: "./A_Steinhoff.jpeg"
+image: "./A_Steinhoff.JPEG"
 ---
 
 Anne Steinhoff is a Lecturer in Accounting at the University of Essex. She undertook her PhD at the Essex Business School and the Centre for Ideology and Discourse Analysis. 

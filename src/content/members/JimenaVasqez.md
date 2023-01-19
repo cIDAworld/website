@@ -1,7 +1,7 @@
 ---
 name: "Jimena Vazquez Garcia"
 role: "post-doctoral researcher at Anglia Ruskin University"
-image: "./JimenaVasqez.jpeg"
+image: "./JimenaVasqez.png"
 
 ---
 

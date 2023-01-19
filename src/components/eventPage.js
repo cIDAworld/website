@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 const getDateJsx = (date, endDate) => {
@@ -22,6 +22,7 @@ const getDateJsx = (date, endDate) => {
 }
 
 const EventPage = props => {
+  const [showParagraph, setShowParagraph] = useState(props.highlighted?false:true)
   const date = getDateJsx(props.date, props.endDate)
 
   const time = props.time ? (
@@ -54,14 +55,29 @@ const EventPage = props => {
       </div>
       <div className="columns">
         <div className="column is-one-third">
-          {props.image ? (
-            <GatsbyImage alt={`Image of ${props.title}`} image={props.image} />
-          ) : (
-            <StaticImage
-              alt="default event picture as no event picture was specified"
-              src="../../static/defaultevent.png"
-            />
-          )}
+          <div className="card-image">
+            {props.image ? (
+              <GatsbyImage
+                alt={`Image of ${props.title}`}
+                image={props.image}
+              />
+            ) : (
+              <StaticImage
+                alt="default event picture as no event picture was specified"
+                src="../../static/defaultevent.png"
+              />
+            )}
+            <div className="tags is-overlay is-align-items-start is-justify-content-left p-3">
+              {props.category?.map(e => (
+                <span
+                  key={`${e}-category`}
+                  className="tag is-capitalized is-white has-shadow"
+                >
+                  {e}
+                </span>
+              ))}
+            </div>
+          </div>
           <aside>
             {date}
             {time}
@@ -69,7 +85,22 @@ const EventPage = props => {
           </aside>
         </div>
         <div className="column is-two-thirds text-content">
-          <div dangerouslySetInnerHTML={{ __html: props.text }}></div>
+          <div
+            className={showParagraph ? undefined : "only-show-beginning"}
+            dangerouslySetInnerHTML={{ __html: props.text }}
+          ></div>
+          {props.highlighted ? (
+            <>
+              <button
+                className="looks-like-link"
+                onClick={() => setShowParagraph(!showParagraph)}
+              >
+                {showParagraph ? "Show less" : "Read more"}
+              </button>
+              <br />
+            </>
+          ) : undefined}
+          <br />
           {pdf}
         </div>
       </div>

@@ -23,6 +23,7 @@ export default function Template({
           place={frontmatter.place}
           image={frontmatter.image?.childImageSharp.gatsbyImageData}
           pdfURL={frontmatter.pdf?.publicURL}
+          category={frontmatter.category}
           text={html}
         />
       </div>
@@ -43,6 +44,7 @@ export const pageQuery = graphql`
         endDate(formatString: "dddd, D MMMM yyyy")
         time
         place
+        category
         pdf {
           publicURL
         }

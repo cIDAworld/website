@@ -78,6 +78,9 @@ const WhatsOn = () => {
             time
             place
             category
+            pdf {
+              publicURL
+            }
             highlight
             image {
               childImageSharp {
@@ -134,6 +137,9 @@ const WhatsOn = () => {
         text={highlight.html}
         image={highlight.frontmatter.image?.childImageSharp.gatsbyImageData}
         key={highlight.id}
+        pdfURL={highlight.frontmatter.pdf?.publicURL}
+        category={highlight.frontmatter.category}
+        highlighted={true}
       />
     ) : undefined
   }, [data])

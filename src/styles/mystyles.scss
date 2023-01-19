@@ -24,6 +24,12 @@ html {
     font-size: 18px;
 }
 
+// Add shadow
+
+.has-shadow {
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);    
+}
+
 // List style in sections
 section ul {
     list-style: inside; 
@@ -31,12 +37,31 @@ section ul {
 
 // About section
 .only-show-first-paragraph {
-    p {
+    * {
         display: none;
     }
-    p:first-child {
+    *:first-child {
         display: block;
     }
+}
+
+// Hide content for project pages (reveal with "read more" button)
+.only-show-beginning {
+    position: relative;
+    max-height: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Fade out content before cut-off
+.only-show-beginning::after {
+    content: "";
+    position: absolute;
+    top: 500px;
+    display: block;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(180deg, transparent 0, $light 100%);
 }
 
 button.looks-like-link {

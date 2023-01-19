@@ -24,7 +24,7 @@ const EventCard = props => {
             {props.category?.map(e => (
               <span
                 key={`${e}-category`}
-                className="tag is-capitalized is-white"
+                className="tag is-capitalized is-white has-shadow"
               >
                 {e}
               </span>

@@ -1,7 +1,7 @@
 ---
 name: "Esra Görgülü"
 role: "PhD student"
-image: "./esragorgulu.jpg"
+image: "./EsraGorgulu.png"
 twitter: "https://twitter.com/esragorguIu "
 ---
 

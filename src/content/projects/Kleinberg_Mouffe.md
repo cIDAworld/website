@@ -47,6 +47,7 @@ References:
  - Zernatto, Guido, and Alfonso G. Mistretta. 1944. “Nation: The History of a Word.” *The Review of Politics* 6 (3): 351–66.
 
 <br>
+
 Reid A. Kleinberg.<br>
 PhD Candidate, University of Essex.<br>
-Rk19251@essex.ac.uk
+[Rk19251@essex.ac.uk](mailto:admin@w3schools.io)

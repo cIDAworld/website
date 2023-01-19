@@ -36,17 +36,17 @@ To conclude, my sense is that the continued use of patriotism by political theor
  
 References:
 
-* Bauböck, Rainer, ed. 2018. *Debating Transformations of National Citizenship*. IMISCOE Research Series. Springer International Publishing. [https://doi.org/10.1007/978-3-319-92719-0](https://doi.org/10.1007/978-3-319-92719-0).
-* Margerison, Kenneth. 1998. *Pamphlets and Public Opinion: The Campaign for a Union of Orders in the Early French Revolution*. West Lafayette, Ind: Purdue University Press.
-* Mouffe, Chantal. 1993. *The Return of the Political*. Revised ed. edition. London; New York: Verso.
-- ———. 2018. *For a Left Populism*. London; New York: Verso.
-* Palmer, Robert R. 1940. “The National Idea in France before the Revolution.” *Journal of the History of Ideas* 1 (1): 95–111. [https://doi.org/10.2307/2707012](https://doi.org/10.2307/2707012).
-* Viroli, Maurizio. 1995. *For Love of Country: An Essay On Patriotism and Nationalism*. Oxford: Clarendon Press.
-* Xenos, Nicholas. 1996. “Statelessness: The Making and Unmaking of Political Identity.” *The European Legacy* 1 (2): 820–25. [https://doi.org/10.1080/10848779608579488](https://doi.org/10.1080/10848779608579488).
-* Yack, Bernard. 1996. “The Myth of the Civic Nation.” *Critical Review* 10 (2): 193–211. [https://doi.org/10.1080/08913819608443417](https://doi.org/10.1080/08913819608443417).
-* Zernatto, Guido, and Alfonso G. Mistretta. 1944. “Nation: The History of a Word.” *The Review of Politics* 6 (3): 351–66.<br>
+ - Bauböck, Rainer, ed. 2018. *Debating Transformations of National Citizenship*. IMISCOE Research Series. Springer International Publishing. [https://doi.org/10.1007/978-3-319-92719-0](https://doi.org/10.1007/978-3-319-92719-0).
+ - Margerison, Kenneth. 1998. *Pamphlets and Public Opinion: The Campaign for a Union of Orders in the Early French Revolution*. West Lafayette, Ind: Purdue University Press.
+ - Mouffe, Chantal. 1993. *The Return of the Political*. Revised ed. edition. London; New York: Verso.
+ - ———. 2018. *For a Left Populism*. London; New York: Verso.
+ - Palmer, Robert R. 1940. “The National Idea in France before the Revolution.” *Journal of the History of Ideas* 1 (1): 95–111. [https://doi.org/10.2307/2707012](https://doi.org/10.2307/2707012).
+ - Viroli, Maurizio. 1995. *For Love of Country: An Essay On Patriotism and Nationalism*. Oxford: Clarendon Press.
+ - Xenos, Nicholas. 1996. “Statelessness: The Making and Unmaking of Political Identity.” *The European Legacy* 1 (2): 820–25. [https://doi.org/10.1080/10848779608579488](https://doi.org/10.1080/10848779608579488).
+ - Yack, Bernard. 1996. “The Myth of the Civic Nation.” *Critical Review* 10 (2): 193–211. [https://doi.org/10.1080/08913819608443417](https://doi.org/10.1080/08913819608443417).
+ - Zernatto, Guido, and Alfonso G. Mistretta. 1944. “Nation: The History of a Word.” *The Review of Politics* 6 (3): 351–66.<br>
 
 
 Reid A. Kleinberg.<br>
 PhD Candidate, University of Essex.<br>
-Rk19251@essex.ac.uk <br>
+Rk19251@essex.ac.uk

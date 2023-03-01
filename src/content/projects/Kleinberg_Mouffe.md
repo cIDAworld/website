@@ -2,7 +2,7 @@
 title: "Agnostic Patriotism or Republican Communitarianism? A Response to Chantal Mouffe"
 name: "Reid A. Kleinberg"
 date: "2023-01-18"
-expireDate: "2023-02-18"
+expireDate: "2023-02-17"
 image: "./Kleinberg_Mouffe.png"
 category: ["blog post"]
 pdf: "./Kleinberg_Mouffe.pdf"

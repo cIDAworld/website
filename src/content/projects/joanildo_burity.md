@@ -4,7 +4,7 @@ name: "Joanildo Burity"
 date: "2023-03-10"
 endDate: "2023-03-10"
 place: "NTC.1.06, University of Essex"
-image: "./cida_red_logo_with_title.jpg"
+image: "./cida_red_logo.png"
 category: ["event"]
 time: "4.30pm"
 highlight: false

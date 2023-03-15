@@ -2,7 +2,7 @@
 title: "Populism, conservatism and public religion in post-impeachment Brazil"
 name: "Joanildo Burity"
 date: "2023-03-10"
-endDate: "2023-03-10"
+expireDate: "2023-03-11"
 place: "NTC.1.06, University of Essex"
 image: "./cida_red_logo.png"
 category: ["event"]

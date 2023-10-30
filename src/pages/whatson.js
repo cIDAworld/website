@@ -90,30 +90,31 @@ const WhatsOn = () => {
           }
         }
       }
-      allTwitterStatusesUserTimelineTimeline(
-        sort: { fields: fields___date, order: DESC }
-        limit: 12
-      ) {
-        nodes {
-          full_text
-          created_at
-          id_str
-
-          image {
-            childImageSharp {
-              gatsbyImageData(height: 200, width: 600)
-            }
-          }
-          retweeted_status {
-            user {
-              name
-              profile_banner_url
-            }
-          }
-        }
-      }
     }
   `)
+    // REINSERT INTO QUERY WHEN TWITTER ISSUES ARE FIXED
+  //   allTwitterStatusesUserTimelineTimeline(
+  //   sort: { fields: fields___date, order: DESC }
+  //   limit: 12
+  // ) {
+  //   nodes {
+  //     full_text
+  //     created_at
+  //     id_str
+
+  //     image {
+  //       childImageSharp {
+  //         gatsbyImageData(height: 200, width: 600)
+  //       }
+  //     }
+  //     retweeted_status {
+  //       user {
+  //         name
+  //         profile_banner_url
+  //       }
+  //     }
+  //   }
+  // }
 
   const [filterCategory, setFilterCategory] = useState(undefined)
 
@@ -144,32 +145,32 @@ const WhatsOn = () => {
     ) : undefined
   }, [data])
 
-  const twitterNews = useMemo(
-    () => (
-      <>
-        <h1 className="title is-medium mt-6">News</h1>
-        <div className="columns is-multiline is-mobile">
-          {data.allTwitterStatusesUserTimelineTimeline.nodes.map(
-            (element, i) => (
-              <div
-                className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
-                key={element.id_str}
-              >
-                <TwitterCard
-                  author={element.retweeted_status?.user.name || "cIDA"}
-                  date={new Date(element.created_at).toDateString()}
-                  text={element.full_text}
-                  image={element.image?.childImageSharp?.gatsbyImageData}
-                  link={`https://www.twitter.com/cIDA_essex/status/${element.id_str}`}
-                />
-              </div>
-            )
-          )}
-        </div>
-      </>
-    ),
-    [data]
-  )
+  // const twitterNews = useMemo(
+  //   () => (
+  //     <>
+  //       <h1 className="title is-medium mt-6">News</h1>
+  //       <div className="columns is-multiline is-mobile">
+  //         {data.allTwitterStatusesUserTimelineTimeline.nodes.map(
+  //           (element, i) => (
+  //             <div
+  //               className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile is-flex"
+  //               key={element.id_str}
+  //             >
+  //               <TwitterCard
+  //                 author={element.retweeted_status?.user.name || "cIDA"}
+  //                 date={new Date(element.created_at).toDateString()}
+  //                 text={element.full_text}
+  //                 image={element.image?.childImageSharp?.gatsbyImageData}
+  //                 link={`https://www.twitter.com/cIDA_essex/status/${element.id_str}`}
+  //               />
+  //             </div>
+  //           )
+  //         )}
+  //       </div>
+  //     </>
+  //   ),
+  //   [data]
+  // )
 
   return (
     <ContentPage pageTitle="What's on">
@@ -180,7 +181,7 @@ const WhatsOn = () => {
           filterCategory,
           selectCategory
         )}
-        {twitterNews}
+        {/* {twitterNews} */}
       </div>
     </ContentPage>
   )
